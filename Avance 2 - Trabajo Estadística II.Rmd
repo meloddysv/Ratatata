@@ -1,0 +1,47 @@
+---
+title: "Avance 2 - Estadística para el Análisis Político II"
+author: "Georgia Tito (20190632) y Meloddy Saldarriaga (20190185)"
+date: "10/14/2021"
+output: html_document
+---
+
+# Introducción del reporte final
+
+Describe de manera clara y coherente el problema público y lo contextualiza. 
+
+- Menciona la información previa que existe sobre el tema de interés y la revisión de literatura (políticas públicas previas, marco regulatorio, acción del Estado)
+- Identifica factores que están asociados al problema de interés.
+- Se presenta el objetivo general y objetivos específicos del reporte. Existe congruencia entre ambos.
+- Se formulará la pregunta de investigación. 
+- Se formulan posibles hipótesis de investigación.
+- Redacta con fluidez y de manera organizada.
+
+
+
+
+# 0. Preparación de la data
+
+### Leyendo la base de datos **World Values Survey Association (2017-2020)**
+```{r}
+library(rio)
+data <-import("WVS.csv")
+```
+
+### Crear subset para el trabajo
+```{r}
+data=subset(data,B_COUNTRY==604)
+data1=subset(data,select=c(Q240, Q82_OAS, Q83, Q84, Q87, Q260, Q262,Q275R, Q288R))
+```
+
+
+### Renombrar variables 
+```{r}
+
+```
+
+
+# 1. Análisis descriptivo
+
+- Análisis descriptivo (medidas de tendencia central y de dispersión) de las variables a utilizar para responder a su pregunta de investigación.
+
+- Se describe las posibles pruebas estadísticas a utilizar que responden a la pregunta de investigación formulada. El acceso a la base de datos es público
