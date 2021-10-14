@@ -17,25 +17,69 @@ Describe de manera clara y coherente el problema público y lo contextualiza.
 - Redacta con fluidez y de manera organizada.
 
 
-
-
 # 0. Preparación de la data
 
 ### Leyendo la base de datos **World Values Survey Association (2017-2020)**
 ```{r}
+#setwd("~/OneDrive/2021/2021-2/Estadística para el Análisis Político 2")
 library(rio)
 data <-import("WVS.csv")
 ```
 
-### Crear subset para el trabajo
+### Crear subset para el trabajo [Perú]
 ```{r}
 data=subset(data,B_COUNTRY==604)
-data1=subset(data,select=c(Q240, Q82_OAS, Q83, Q84, Q87, Q260, Q262,Q275R, Q288R))
+data1=subset(data,select=c(Q240, Q82_OAS, Q83, Q84, Q87, Q4, Q48, Q49, Q50, Q146, Q147, Q149, Q150, Q152, Q154, Q199, Q240, Q259, Q260, Q262,Q275R, Q288R))
 ```
 
 
-### Renombrar variables 
+### Configurar la variable independiente: Confianza en las organizaciones internacionales en el Perú
 ```{r}
+library(car)
+table(data1$Q87) # No se pregunto sobre Q87
+
+# Q82
+data1$Q82_OAS[data1$Q82_OAS == "-1"] <- NA
+data1$Q82_OAS[data1$Q82_OAS == "-2"] <- NA
+
+table(data1$Q82_OAS)
+data1$OEA <- recode(data1$Q82_OAS, "1=4; 2=3; 3=2;4=1")
+table(data1$OEA)
+
+# Q83
+data1$Q83[data1$Q83 == "-1"] <- NA
+data1$Q83[data1$Q83 == "-2"] <- NA
+data1$Q83[data1$Q83 == "-5"] <- NA
+
+table(data1$Q83)
+data1$ONU <- recode(data1$Q83, "1=4; 2=3; 3=2;4=1")
+table(data1$ONU)
+
+# Q84
+data1$Q84[data1$Q84 == "-1"] <- NA
+data1$Q84[data1$Q84 == "-2"] <- NA
+
+table(data1$Q84)
+data1$BM <- recode(data1$Q84, "1=4; 2=3; 3=2;4=1")
+table(data1$BM)
+
+# Indice: Confianza en las organizaciones internacionales
+data1$confianza=data1$OEA+data1$ONU+data1$BM
+summary(data1$confianza)
+data1$Indicador=((data1$confianza-3)/9*100) 
+summary(data1$Indicador)
+
+data1$OI = cut(data1$Indicador, breaks = c(0, 32.89,100),
+                                  include.lowest = T, ordered_result = T,
+                                  labels = c("Baja Confianza", "Alta Confianza"))
+
+table(data1$OI)
+```
+
+
+### Renombrar las variables independientes y configurarlas
+```{r}
+
 
 ```
 
