@@ -21,14 +21,14 @@ Describe de manera clara y coherente el problema público y lo contextualiza.
 
 ### Leyendo la base de datos **World Values Survey Association (2017-2020)**
 ```{r}
-#setwd("~/OneDrive/2021/2021-2/Estadística para el Análisis Político 2")
+setwd("~/OneDrive/2021/2021-2/Estadística para el Análisis Político 2")
 library(rio)
-data <-import("WVS_Peru.xlsx")
+WVS <-import("WVS_Peru.xlsx")
 ```
 
 ### Crear subset para el trabajo [Perú]
 ```{r}
-data1=subset(data,select=c(Q240, Q82_OAS, Q83, Q84, Q87, Q4, Q48, Q49, Q50, Q146, Q147, Q149, Q150, Q152, Q154, Q199, Q259, Q260, Q262,Q275R, Q288R))
+data=subset(WVS,select=c(`Q4: Important in life: Politics`, `Q48: How much freedom of choice and control`, `Q49: Satisfaction with your life`, `Q50: Satisfaction with financial situation of household`, `Q82_OAS: Confidence: The Organization of American States (OAE)`, `Q83: Confidence: The United Nations (UN)`, `Q84: Confidence: International Monetary Found (IMF)`, `Q146: Worries: A war involving my country`, `Q147: Worries: A terrorist attack`, `Q149: Freedom and Equality - Which more important`, `Q150: Freedom and security - Which more important`, `Q152: Aims of country: first choice`, `Q154: Aims of respondent: first choice`, `Q199: Interest in politics`, `Q240: Left-right political scale`, `Q250: Importance of democracy`, `Q260: Sex`, `Q262: Age`, `Q275R: Highest educational level: Respondent (recoded into 3 groups)`, `Q288R: Income level (Recoded)`))
 
 #str(data$`Q4: Important in life: Politics`)
 #str(data$`Q48: How much freedom of choice and control`)
@@ -59,10 +59,10 @@ library(car)
 
 # Q82
 table(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`)
-data1$Q82_OAS[data1$Q82_OAS == "-1"] <- NA
-data1$Q82_OAS[data1$Q82_OAS == "-2"] <- NA
-data1$OEA <- recode(data1$Q82_OAS, "1=4; 2=3; 3=2;4=1")
-table(data1$OEA)
+data$`Q82_OAS: Confidence: The Organization of American States (OAE)`[data$`Q82_OAS: Confidence: The Organization of American States (OAE)` == "-1"] <- NA
+data$`Q82_OAS: Confidence: The Organization of American States (OAE)`[data$`Q82_OAS: Confidence: The Organization of American States (OAE)` == "-2"] <- NA
+data$OEA <- recode(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`, "1=4; 2=3; 3=2;4=1")
+table(data$OEA)
 
 # Q83
 data1$Q83[data1$Q83 == "-1"] <- NA
