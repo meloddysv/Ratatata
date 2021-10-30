@@ -159,7 +159,100 @@ data$preo_guerra=as.factor(data$preo_guerra)
 levels(data$preo_guerra)=c("Nada", "Poco", "Bastante", "Mucho")
 table(data$preo_guerra)
 ```
-chau
+**- Libertad de elección y control**
+```{r}
+str(data$`Q48: How much freedom of choice and control`)
+data$`Q48: How much freedom of choice and control`[data$`Q48: How much freedom of choice and control` == "-2"] <- NA
+data$`Q48: How much freedom of choice and control`[data$`Q48: How much freedom of choice and control` == "-1"] <- NA
+data$`Q48: How much freedom of choice and control`=as.ordered(data$`Q48: How much freedom of choice and control`)
+levels(data$`Q48: How much freedom of choice and control`)
+summary(data$`Q48: How much freedom of choice and control`)
+```
+**- Libertad o igualdad**
+```{r}
+str(data$`Q149: Freedom and Equality`)
+data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-1"] <- NA
+data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-2"] <- NA
+data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-4"] <- NA
+data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-5"] <- NA
+data$`Q149: Freedom and Equality`=as.factor(data$`Q149: Freedom and Equality`)
+levels(data$`Q149: Freedom and Equality`)
+levels(data$`Q149: Freedom and Equality`)<-c("freedom","equality")
+summary(data$`Q149: Freedom and Equality`)
+```
+**- Libertad o seguridad**
+```{r}
+str(data$`Q150: Freedom and security - Which more important`)
+data$`Q150: Freedom and security - Which more important` [data$`Q150: Freedom and security - Which more important` == "-1"] <- NA
+data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and security - Which more important` == "-2"] <- NA
+data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and security - Which more important` == "-4"] <- NA
+data$data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and security - Which more important` == "-5"] <- NA
+data$`Q150: Freedom and security - Which more important`=as.factor(data$`Q150: Freedom and security - Which more important`)
+levels(data$`Q150: Freedom and security - Which more important`)
+levels(data$`Q150: Freedom and security - Which more important`)<-c("freedom","security")
+summary(data$`Q150: Freedom and security - Which more important`)
+```
+**- Objetivos del país**
+```{r}
+str(data$`Q152: Aims of country: first choice`)
+data$`Q152: Aims of country: first choice`  [data$`Q152: Aims of country: first choice` == "-1"] <- NA
+data$`Q152: Aims of country: first choice` [data$`Q152: Aims of country: first choice` == "-2"] <- NA
+data$`Q152: Aims of country: first choice`[data$`Q152: Aims of country: first choice` == "-4"] <- NA
+data$`Q152: Aims of country: first choice`[data$`Q152: Aims of country: first choice` == "-5"] <- NA
+data$`Q152: Aims of country: first choice`=as.factor(data$`Q152: Aims of country: first choice`)
+levels(data$`Q152: Aims of country: first choice`)
+levels(data$`Q152: Aims of country: first choice`)<-c("A high level of economic growth","Strong defence forces","People have more say about how things are done","Trying to make our cities and countryside more beautiful")
+summary(data$`Q152: Aims of country: first choice`)
+```
+**- Objetivos del encuestado**
+```{r}
+names(data)
+str(data$`Q154: Aims of respondent: first choice`)
+
+data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice`== "-1"] <- NA
+data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice` == "-2"] <- NA
+data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice`== "-4"] <- NA
+data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice`== "-5"] <- NA
+data$`Q154: Aims of respondent: first choice`=as.factor(data$`Q154: Aims of respondent: first choice`)
+levels(data$`Q154: Aims of respondent: first choice`)
+levels(data$`Q154: Aims of respondent: first choice`)<-c("Maintaining order in the nation","Giving people more say in important government decisions ","Fighting rising prices","Protecting freedom of speech")
+summary(data$`Q154: Aims of respondent: first choice`)
+```
+**- Democracia**
+```{r}
+table(data$`Q250: Importance of democracy`)
+str(data$`Q250: Importance of democracy`)
+data$`Q250: Importance of democracy`[data$`Q250: Importance of democracy` == "-2"] <- NA
+data$`Q250: Importance of democracy`[data$`Q250: Importance of democracy` == "-1"] <- NA
+data$`Q250: Importance of democracy`=as.ordered(data$`Q250: Importance of democracy`)
+levels(data$`Q250: Importance of democracy`)
+summary(data$`Q250: Importance of democracy`)
+```
+**- Proximidad al mundo**
+```{r}
+table(data$`Q259: Feel close to the world`)
+str(data$`Q259: Feel close to the world`)
+data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-2"] <- NA
+data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-1"] <- NA
+data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-4"] <- NA
+data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-5"] <- NA
+data$`Q259: Feel close to the world`=as.ordered(data$`Q259: Feel close to the world`)
+levels(data$`Q259: Feel close to the world`)
+levels(data$`Q259: Feel close to the world`)<-c("very close","close","not very close","not close at all")
+summary(data$`Q259: Feel close to the world`)
+```
+**- Nivel de educación**
+```{r}
+table(data$`Q275R: Highest educational level: Respondent`)
+str(data$`Q275R: Highest educational level: Respondent`)
+data$`Q275R: Highest educational level: Respondent`[data$`Q275R: Highest educational level: Respondent` == "-2"] <- NA
+data$`Q275R: Highest educational level: Respondent`[data$`Q275R: Highest educational level: Respondent`== "-1"] <- NA
+
+data$`Q275R: Highest educational level: Respondent`=as.ordered(data$`Q275R: Highest educational level: Respondent`)
+levels(data$`Q275R: Highest educational level: Respondent`)
+levels(data$`Q275R: Highest educational level: Respondent`)<-c("primary","secundary","post-secundary","tertiary")
+summary(data$`Q275R: Highest educational level: Respondent`)
+```
 
 # 1. Análisis descriptivo
 
@@ -208,9 +301,134 @@ ylab = "Porcentaje", col = "lightgreen", border = "darkgreen")
 plot(data$Indicador~data$Ideologia)
 ```
 
+**- Libertad de elección y control**
+```{r}
+library(DescTools)
+Mode(data$`Q48: How much freedom of choice and control`,na.rm = T)
+Median(data$`Q48: How much freedom of choice and control`,na.rm = T)
+```
+Las mayor cantidad de personas se sienten con mucha libertad de elección y control. Asimismo, la mitad de los encuestados asignaron a su libertad de elección y control un puntaje menor o igual a 8 y la otra mitad le asignaron un valor mayor o igual a 8.
+```{r}
+boxplot(data$`Q48: How much freedom of choice and control`)
+```
+Se observa que solo existe un caso atípico y que más del 75% de encuestados considera que tiene capacidad de elección y libertad. De esta forma, son pocas las personas que marcaron un nivel bajo
 
 
+**- Libertad o igualdad**
+
+```{r}
+Mode(data$`Q149: Freedom and Equality`,na.rm = T)
+```
+Las mayor cantidad de personas prefieren la igualdad que la libertad 
+```{r}
+library(ggplot2)
+t1=as.data.frame(table(data$`Q149: Freedom and Equality`))
+
+ggplot(t1,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE libertad o igualdad")+xlab("") + ylab(" ")
+barplot(table(data$`Q149: Freedom and Equality`),col="purple",
+        xlab=NULL,
+        ylab="Conteo de encuestados",
+        main="libertad o igualdad")
+```
+Se observa que la mayoría de personas prefiere la igualdad; sin embargo, la diferencia no es mucha. 
+
+**- Libertad o seguridad**
+
+```{r}
+Mode(data$`Q150: Freedom and security - Which more important`,na.rm = T)
+```
+Las mayor cantidad de personas prefieren la seguridad que la libertad 
+```{r}
+t2=as.data.frame(table(data$`Q150: Freedom and security - Which more important`))
+
+ggplot(t2,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE libertad o seguridad")+xlab("") + ylab(" ")
+barplot(table(data$`Q150: Freedom and security - Which more important`),col="pink",
+        xlab=NULL,
+        ylab="Conteo de encuestados",
+        main="libertad o seguridad")
+```
+ Se observa que la mayoría de personas prefiere la seguridad. Además, a diferencia del gráfico de la variable Q149, la diferencia entre las personas que prefieren seguridad antes que libertad es notoria. 
+ 
+**- Objetivos del país**
+
+```{r}
+Mode(data$`Q152: Aims of country: first choice`,na.rm = T)
+```
+Las mayor cantidad de personas consideran que los objetivos del país deben de enfocarse en un alto nivel de crecmiento económico
+```{r}
+t3=as.data.frame(table(data$`Q152: Aims of country: first choice`))
+
+ggplot(t3,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE Q152")+xlab("") + ylab(" ")
+
+```
+Se observa que la mayoría de personas prefiere que el pís se enfoque en un alto crecimiento económico antes de hacer nuestras ciudades un poco más bellas 
 
 
+**- Objetivos del encuestado**
 
-- Se describe las posibles pruebas estadísticas a utilizar que responden a la pregunta de investigación formulada. El acceso a la base de datos es público
+```{r}
+Mode(data$`Q154: Aims of respondent: first choice`,na.rm = T)
+```
+Las mayor cantidad de personas consideran que sus objetivos deben de enfocarse en mantener orden en la nación
+```{r}
+t4=as.data.frame(table(data$`Q154: Aims of respondent: first choice`))
+
+ggplot(t4,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE Q154")+xlab("") + ylab(" ")
+```
+ Se observa que la mayoría de personas prefiere enfocarse en mantener orden en la nación  
+ **- Democracia**
+
+```{r}
+Mode(data$`Q250: Importance of democracy`,na.rm = T)
+Median(data$`Q250: Importance of democracy`,na.rm = T)
+```
+Las mayor cantidad de personas le da una gran importancia a la democracia. Asimismo, la mitad de los encuestados asignaron a la importancia de la democracia un puntaje menor o igual a 9 y la otra mitad le asignaron un valor mayor o igual a 9.
+
+
+```{r}
+boxplot(data$`Q250: Importance of democracy`)
+```
+Se observa que no existen muchos casos atípicos y que más del 75% de encuestados considera que la importancia a la democracia es relevante
+
+**- Proximidad al mundo**
+
+```{r}
+Mode(data$`Q259: Feel close to the world`,na.rm = T)
+t5=as.data.frame(table(data$`Q259: Feel close to the world`))
+
+ggplot(t5,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE")+xlab("") + ylab(" ")
+```
+Se observa que la mayor cantidad de personas consideran que se encuentran cercanas al mundo
+
+**- Nivel de educación**
+
+```{r}
+Mode(data$`Q275R: Highest educational level: Respondent`,na.rm = T)
+```
+Se observa que la mayor cantidad de participantes alcanzó el nivel educativo secundario 
+
+```{r}
+t6=as.data.frame(table(data$`Q275R: Highest educational level: Respondent`))
+
+ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE")+xlab("") + ylab(" ")
+```
+Se observa que la mayor cantidad de personas alcanzó el nivel secundario 
+
