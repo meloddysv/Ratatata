@@ -159,7 +159,7 @@ data$preo_guerra=as.factor(data$preo_guerra)
 levels(data$preo_guerra)=c("Nada", "Poco", "Bastante", "Mucho")
 table(data$preo_guerra)
 ```
-
+chau
 
 # 1. Análisis descriptivo
 
