@@ -268,6 +268,7 @@ hist(data$Edad, main = "Histograma de la variable Edad", xlab = "Edad", ylab = "
 
 **- Ingreso socioeconómico**
 ```{r}
+Mode(data$Ingresos, na.rm = T)
 table(data$Ingresos)
 tabla_ingresos=table(data$Ingresos)
 tabla_ingresos1=prop.table(tabla_ingresos)*100
@@ -278,7 +279,7 @@ xlab = "Nivel de ingresos",
 ylab = "Porcentaje", col = "aquamarine3", border = "darkgreen")
 ```
 
-
+- Del total de persona, la mayoría (68.47%) considera tener un ingreso medio, mientras que quienes consideran tener un bajo nivel representa el 23%, y alto nivel solo 8%. 
 
 
 **- Variable ideología**
@@ -296,7 +297,39 @@ ylab = "Porcentaje", col = "lightgreen", border = "darkgreen")
 
 ```
 
-- Como se observa, del total de persona, la mayoría (50.17% o 592 personas) se consideran de centro, después el 35% se considera de derecha, y el 14% de izquierda.
+- Como se observa, del total de personas, la mayoría (50.17% o 592 personas) se consideran de centro, después el 35% se considera de derecha, y el 14% de izquierda.
+
+**- Interés en la política:**
+```{r}
+Mode(data$interes_pol, na.rm = T)
+summary(data$interes_pol)
+tabla_interes=table(data$interes_pol)
+tabla_interes1=prop.table(tabla_interes)*100
+round(tabla_interes1, digits = 2)
+
+barplot(tabla_interes1, main = "Gráfico de barras de interés en la política",
+xlab = "Interés en la política",
+ylab = "Porcentaje", col = "darkgoldenrod3", border = "darkgoldenrod")
+```
+
+- La mayoría de personas encuestadas (38.8%) tiene un poco interés en la política. Le sigue quienes tienen nada de interés (38.4%), algo (15.7%) y mucho (7.1%).
+
+**- Preocupación por una guerra**
+```{r}
+Mode(data$preo_guerra, na.rm = T)
+tabla_preo=table(data$preo_guerra)
+tabla_preo1=prop.table(tabla_preo)*100
+round(tabla_preo1, digits = 2)
+
+t3=as.data.frame(table(data$preo_guerra))
+
+ggplot(t3,aes(x="Grado de preocupación por una guerra",y=Freq, fill=Var1))+
+  geom_bar(stat = "identity",color="black")+
+  geom_text(aes(label=Freq),
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico de preocupación por una guerra")+xlab("") + ylab(" ")
+
+```
+- La mayoría de las personas (57.09%) tienen mucha preocupación porque el Perú se involucre en una guerra.  
 
 **- Libertad de elección y control**
 ```{r}
