@@ -235,7 +235,26 @@ summary(data$`Q259: Feel close to the world`)
 
 # 1. Análisis descriptivo
 
+a. Variables dependientes 
 
+- ONU 
+ ```{r}
+Mode(data$ONU,na.rm = T)
+Median(data$ONU,na.rm = T)
+hist(data$ONU)
+```
+Se observa que 2 es el grado mayor votado e confianza a la ONU. Asimismo el 50% de personas eligió una confianza mayor o igual a 2, mientras que el otro 50% tiene una confianza menor o igual a 2. 
+
+- FMI 
+ ```{r}
+Mode(data$FMI,na.rm = T)
+Median(data$FMI,na.rm = T)
+hist(data$FMI)
+ ```
+Se observa que 1 es el grado mayor votado e confianza aL FMI. Asimismo el 50% de personas eligió una confianza mayor o igual a 1, mientras que el otro 50% tiene una confianza menor o igual a 1. Es decir, la confianza al FMI es casi nula 
+
+
+b. Variables independientes 
 **- Variable sexo**
 ```{r}
 library(DescTools)
