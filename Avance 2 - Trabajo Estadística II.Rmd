@@ -5,6 +5,8 @@ date: "10/14/2021"
 output: html_document
 ---
 
+Link repositorio en github: https://github.com/meloddysv/Ratatata.git
+
 # Introducción del reporte final
 
 Desde finales de la Segunda Guerra Mundial, hubo una creciente proliferación de organizaciones internacionales con nuevas capacidades y competencias dedicadas a la cooperación política y económica (Pastor 1986). Gracias al Sistema de Naciones Unidas, se crearon organismos para que los Estados puedan encargarse de velar por una diversidad de temas, especialmente, tras la falla de la Liga de las Naciones al querer velar por la paz y seguridad a nivel mundial. Entre las distintas organizaciones que se crearon destaca la Organización Mundial de la Salud (OMS), como las que estaban vinculadas al Sistema de Bretton Woods: el Banco Mundial, el Fondo Monetario Internacional y el GATT, posteriormente conocido como la Organización Mundial del Comercio. Paralelamente, surgieron organizaciones regionales de integración o vinculación por temas específicos, como la Unión Africana, la Unión Europea y la Organización de Estados Americanos. 
