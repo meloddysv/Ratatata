@@ -29,7 +29,7 @@ Sobre el **interés en la política**, Torgler (2007) encuentra en un estudio so
 
 En torno a la **amenaza de guerra**, Shannon (2009) analiza la relación entre las organizaciones internacionales y el mantenimiento de la paz, teniendo en consideración que previos estudios han encontrado que países miembros de una misma organización reducen la posibilidad de conflicto, por lo que estas fomentarán la paz entre países, especialmente, las que son más estructuradas. De esta manera, las OI serían valiosas para fomentar la participación internacional activa en los conflictos de los miembros, por lo que los ciudadanos de un país podrían. Por otro lado, la **libertad personal** es fundamental en la vida de las personas, su importancia abarca tal magnitud que el artículo 7 de la Convención Americana habla de ella como uno de los derechos principales en la vida de las personas (Leco y Belman, 2018). Es decir, debe de ser protegida de diversos abusos que se puedan cometer por distintos actores. En este punto las organizaciones internacionales juegan un papel clave, ya que posibilitan, protegen  y fomentan grados de libertad y bienestar individual, derechos y una autodeterminación colectiva (Burgos, 2019). 
 
-La decisión de brindar o no confianza a las organizaciones internacionales se basa en los sucesos o hechos del entorno de los encuestados, así como también en los **objetivos** que estos se han establecido (Cabeza de Vergara y Muñoz, 2010). Finalmente, día a día vivimos en un mundo cada vez más globalizado e interconectado, este tema no solo afecta a actores de otra naturaleza, sino también a nosotros como individuos. La globalización implica flujos, no solo materiales o económicos, sino también de ideas, conocimiento e información (Flores, 2016). Por ende, la información del actuar y planes de operación de las organizaciones internacionales no es privada o de difícil acceso, al contrario todos pueden acceder a ella mediante internet, porque nos encontramos **más cerca del mundo**. 
+Por otra parte, la decisión de brindar o no confianza a las organizaciones internacionales se basa en los sucesos o hechos del entorno de los encuestados, así como también en los **objetivos** que estos se han establecido (Cabeza de Vergara y Muñoz, 2010). Finalmente, día a día vivimos en un mundo cada vez más globalizado e interconectado, este tema no solo afecta a actores de otra naturaleza, sino también a nosotros como individuos. La globalización implica flujos, no solo materiales o económicos, sino también de ideas, conocimiento e información (Flores, 2016). Por ende, la información del actuar y planes de operación de las organizaciones internacionales no es privada o de difícil acceso, al contrario todos pueden acceder a ella mediante internet, porque nos encontramos **más cerca del mundo**. 
 
 Después de la revisión bibliográfica de las variables a usar, las hipótesis de este trabajo son las siguientes: 
 
@@ -38,7 +38,6 @@ Después de la revisión bibliográfica de las variables a usar, las hipótesis 
 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 3. Las personas con mayor interés y confianza en la democracia, serán las que le brinden un alto grado de confianza y credibilidad a las organizaciones internacionales 
-
 
 
 # 0. Preparación de la data
@@ -83,7 +82,6 @@ data$`Q84: Confidence: International Monetary Found (IMF)`[data$`Q84: Confidence
 
 data$FMI <- recode(data$`Q84: Confidence: International Monetary Found (IMF)`, "1=4; 2=3; 3=2;4=1")
 table(data$FMI)
-
 ```
 
 
@@ -127,7 +125,7 @@ data$`Q275R: Highest educational level: Respondent`[data$`Q275R: Highest educati
 
 data$`Q275R: Highest educational level: Respondent`=as.ordered(data$`Q275R: Highest educational level: Respondent`)
 levels(data$`Q275R: Highest educational level: Respondent`)
-levels(data$`Q275R: Highest educational level: Respondent`)<-c("primary","secundary","post-secundary","tertiary")
+levels(data$`Q275R: Highest educational level: Respondent`)<-c("Primario","Secundario","Post-secundario","Terciario")
 summary(data$`Q275R: Highest educational level: Respondent`)
 ```
 
@@ -184,7 +182,7 @@ data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-4"] <- 
 data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-5"] <- NA
 data$`Q149: Freedom and Equality`=as.factor(data$`Q149: Freedom and Equality`)
 levels(data$`Q149: Freedom and Equality`)
-levels(data$`Q149: Freedom and Equality`)<-c("freedom","equality")
+levels(data$`Q149: Freedom and Equality`)<-c("Libertad","Igualdad")
 summary(data$`Q149: Freedom and Equality`)
 ```
 
@@ -197,7 +195,7 @@ data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and
 data$data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and security - Which more important` == "-5"] <- NA
 data$`Q150: Freedom and security - Which more important`=as.factor(data$`Q150: Freedom and security - Which more important`)
 levels(data$`Q150: Freedom and security - Which more important`)
-levels(data$`Q150: Freedom and security - Which more important`)<-c("freedom","security")
+levels(data$`Q150: Freedom and security - Which more important`)<-c("Libertad","Seguridad")
 summary(data$`Q150: Freedom and security - Which more important`)
 ```
 
@@ -256,44 +254,44 @@ summary(data$`Q259: Feel close to the world`)
 ```
 
 
-
 # 1. Análisis descriptivo
 
-a. Variables dependientes 
+## a. Variables dependientes 
 
-Como se emplearan las tres siguientes variables para construir el indicador confianza en las organizaciones internacionales, estas serán tomadas como numéricas. 
+Como se emplearán las tres siguientes variables para construir el indicador confianza en las organizaciones internacionales, estas serán tomadas como numéricas para el análisis. 
 
 **- Variable confianza en la Organización de las Naciones Unidas (ONU)**
 ```{r}
+library(DescTools)
 Mode(data$ONU,na.rm = T)
 Median(data$ONU,na.rm = T)
-hist(data$ONU, xlab = "Nivel de confianza", ylab = "Frecuencia")
+hist(data$ONU, xlab = "Nivel de confianza", ylab = "Frecuencia", col = "darkolivegreen", main = "Histograma de confianza en la ONU")
 ```
 
-Se observa que 2 es el grado mayor votado e confianza a la ONU. Asimismo el 50% de personas eligió una confianza mayor o igual a 2, mientras que el otro 50% tiene una confianza menor o igual a 2. 
+- Se observa que 2 es el grado mayor votado e confianza a la ONU. Asimismo el 50% de personas eligió una confianza mayor o igual a 2, mientras que el otro 50% tiene una confianza menor o igual a 2. Cabe mencionar que la cola de la curva esta a la derecha, por lo que exsite mayor cantidad de datos en las puntuaciones de valores bajos, es decir, existe una asimetría positiva (muy pocas personas confian en la ONU). 
 
 **- Variable confianza en el Fondo Monetario Internacional (FMI)**
 
 ```{r}
 Mode(data$FMI,na.rm = T)
 Median(data$FMI,na.rm = T)
-hist(data$FMI, main="Histograma de confianza en el FMI", xlab = "Nivel de confianza", ylab = "Frecuencia")
+hist(data$FMI, main="Histograma de confianza en el FMI", xlab = "Nivel de confianza", ylab = "Frecuencia", col = "darkgoldenrod2")
 ```
 
-
-Se observa que 1 es el grado mayor votado e confianza aL FMI. Asimismo el 50% de personas eligió una confianza mayor o igual a 1, mientras que el otro 50% tiene una confianza menor o igual a 1. Es decir, la confianza en el FMI es casi nula 
-
+- Se observa que 1 es el grado mayor votado de confianza en el FMI. Asimismo el 50% de personas eligió una confianza mayor o igual a 1, mientras que el otro 50% tiene una confianza menor o igual a 1. Es decir, la confianza en el FMI es casi nula. En este caso, se osberva con mayor claridad que hay una asimetría positiva, ya que existen mayor cantidad de datos en los valores bajos (muy poca confianza). 
 
 **- Variable confianza en la Organización de Estados Americanos (OEA)**
 
 ```{r}
 table(data$OEA)
 summary(data$OEA)
-hist(data$OEA, main="Confianza en la OEA", xlab = "Nivel de confianza", ylab = "Frecuencia")
+hist(data$OEA, main="Confianza en la OEA", xlab = "Nivel de confianza", ylab = "Frecuencia", col = "cyan4")
 ```
 
+- Se observa que la mayoría de personas tienen un grado de confianza de nivel 2 en la OEA. Asimismo el 50% de personas eligió una confianza mayor o igual a 2. En esta misma linea se osberva que hay una asimetría positiva, ya  que los valores se concentran en los más bajos. Sin embargo, a diferencia del FMI, la confianza parecería ser mayor. 
 
-b. Variables independientes 
+## b. Variables independientes 
+
 **- Variable sexo**
 ```{r}
 library(DescTools)
@@ -308,7 +306,7 @@ PieChart(Var1, hole = 0, values = "%", data = t0,
          fill = c("darkkhaki", "pink"), main = "Gráfico pie de sexo")
 ```
 
-- Como se puede observar, del total de los encuestados 702 fueron hombres (el valor más frecuente) y 698 mujeres. Por lo tanto, en el gráfico de pie  se observa que apróximadamente la mitad fueron hombres, y la otra mitad mujeres. 
+- Como se puede observar, del total de los encuestados 702 fueron hombres (el valor más frecuente) y 698 mujeres. Por lo tanto, en el gráfico de piese observa que apróximadamente la mitad fueron hombres, y la otra mitad mujeres. 
  
 
 **- Variable edad**
@@ -387,7 +385,7 @@ ggplot(t3,aes(x="Grado de preocupación por una guerra",y=Freq, fill=Var1))+
             position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico de preocupación por una guerra")+xlab("") + ylab(" ")
 
 ```
-- La mayoría de las personas (57.09%) tienen mucha preocupación porque el Perú se involucre en una guerra.  
+- La mayoría de las personas (57.09%) tienen mucha preocupación porque el Perú se involucre en una guerra.
 
 **- Libertad de elección y control**
 ```{r}
@@ -399,7 +397,7 @@ Median(data$`Q48: How much freedom of choice and control`,na.rm = T)
 - La mayor cantidad de personas se sienten con mucha libertad de elección y control. Asimismo, la mitad de los encuestados asignaron a su libertad de elección y control un puntaje menor o igual a 8 y la otra mitad le asignaron un valor mayor o igual a 8.
 
 ```{r}
-boxplot(data$`Q48: How much freedom of choice and control`)
+boxplot(data$`Q48: How much freedom of choice and control`, main="Boxplot de Libertad de elección y control", col = "darksalmon")
 ```
 
 - Se observa que solo existe un caso atípico y que más del 75% de encuestados considera que tiene capacidad de elección y libertad. De esta forma, son pocas las personas que marcaron un nivel bajo
@@ -436,7 +434,7 @@ barplot(table(data$`Q149: Freedom and Equality`),col="purple",
 Mode(data$`Q150: Freedom and security - Which more important`,na.rm = T)
 ```
 
-- Las mayor cantidad de personas prefieren la seguridad que la libertad 
+- Las mayor cantidad de personas prefieren la seguridad que la libertad.
 
 ```{r}
 t2=as.data.frame(table(data$`Q150: Freedom and security - Which more important`))
@@ -451,7 +449,7 @@ barplot(table(data$`Q150: Freedom and security - Which more important`),col="pin
         main="libertad o seguridad")
 ```
  
-- Se observa que la mayoría de personas prefiere la seguridad. Además, a diferencia del gráfico de la variable Q149, la diferencia entre las personas que prefieren seguridad antes que libertad es notoria. 
+- Se observa que la mayoría de personas prefiere la seguridad. Además, a diferencia del gráfico de la variable libertad o seguridad, la diferencia entre las personas que prefieren seguridad antes que libertad es notoria. 
  
 **- Objetivos del país**
 
@@ -459,7 +457,7 @@ barplot(table(data$`Q150: Freedom and security - Which more important`),col="pin
 Mode(data$`Q152: Aims of country: first choice`,na.rm = T)
 ```
 
-- Las mayor cantidad de personas consideran que los objetivos del país deben de enfocarse en un alto nivel de crecmiento económico
+- La mayor cantidad de personas consideran que los objetivos del país deben de enfocarse en un alto nivel de crecmiento económico
 
 ```{r}
 t3=as.data.frame(table(data$`Q152: Aims of country: first choice`))
@@ -543,17 +541,17 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
 
-Después de este anaaa2álisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados 
+Después de este análisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
 
 
-###. Bibliografía:
+### Bibliografía:
 
 Brewer, P.R., Gross, K., Aday, S. and Willnat, L. (2004). International Trust and Public Opinion About World Affairs. American Journal of Political Science, 48: 93-109. https://doi-org.ezproxybib.pucp.edu.pe/10.1111/j.0092-5853.2004.00058.x
 
  
 Burgos, J. (2019, 12 abril). Las organizaciones internacionales y sus recursos de poder. Una propuesta analítica. Scielo. Recuperado 29 de octubre de 2021, de http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0121-51672019000100149
 
-Cabeza De Vergara, L., & Muñoz, A. (2010, 10 enero). ANÁLISIS DEL PROCESO DE TOMA DE DECISIONES, VISIÓN DESDE LA PYME Y LA GRAN EMPRESA DE BARRANQUILLA. Redalyc. Recuperado 29 de octubre de 2021, de https://www.redalyc.org/pdf/4096/409634363002.pdf
+Cabeza De Vergara, L., & Muñoz, A. (2010, 10 enero). Análisis del proceso de toma de decisiones, visión desde la PYME y la Gran Empresa de Barranquilla. Redalyc. Recuperado 29 de octubre de 2021, de https://www.redalyc.org/pdf/4096/409634363002.pdf
 
 Edwards, M. S. (2009). Public support for the international economic organizations: Evidence from developing countries. Review of International Organizations, 4(2), 185- 209.
 
