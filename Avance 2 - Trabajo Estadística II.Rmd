@@ -484,3 +484,24 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
+
+**- Variable confianza en la Organización de Estados Americanos (OEA)**
+
+```{r}
+table(data$OEA)
+summary(data$OEA)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
