@@ -444,7 +444,7 @@ t2=as.data.frame(table(data$`Q150: Freedom and security - Which more important`)
 ggplot(t2,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
-            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE libertad o seguridad")+xlab("") + ylab(" ")
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable  libertad o seguridad")+xlab("") + ylab(" ")
 barplot(table(data$`Q150: Freedom and security - Which more important`),col="pink",
         xlab=NULL,
         ylab="Conteo de encuestados",
@@ -467,7 +467,7 @@ t3=as.data.frame(table(data$`Q152: Aims of country: first choice`))
 ggplot(t3,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
-            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE Q152")+xlab("") + ylab(" ")
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable sobre los objetivos del país")+xlab("") + ylab(" ")
 
 ```
 
@@ -488,7 +488,7 @@ t4=as.data.frame(table(data$`Q154: Aims of respondent: first choice`))
 ggplot(t4,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
-            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE Q154")+xlab("") + ylab(" ")
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable objetivos de los encuestados")+xlab("") + ylab(" ")
 ```
 
 - Se observa que la mayoría de personas prefiere enfocarse en mantener orden en la nación.  
@@ -518,7 +518,7 @@ t5=as.data.frame(table(data$`Q259: Feel close to the world`))
 ggplot(t5,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
-            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE")+xlab("") + ylab(" ")
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable proximidad al mundo")+xlab("") + ylab(" ")
 ```
 
 - Se observa que la mayor cantidad de personas consideran que se encuentran cercanas al mundo.
@@ -537,10 +537,13 @@ t6=as.data.frame(table(data$`Q275R: Highest educational level: Respondent`))
 ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
-            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("GRÁFICO PIE DE LA VARIABLE")+xlab("") + ylab(" ")
+            position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable educación")+xlab("") + ylab(" ")
 ```
 
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
+
+
+Después de este anaaa2álisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados 
 
 
 ###. Bibliografía:
