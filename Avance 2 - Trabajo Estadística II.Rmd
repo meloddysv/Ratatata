@@ -7,14 +7,38 @@ output: html_document
 
 # Introducción del reporte final
 
-Describe de manera clara y coherente el problema público y lo contextualiza. 
+Desde finales de la Segunda Guerra Mundial, hubo una creciente proliferación de organizaciones internacionales con nuevas capacidades y competencias dedicadas a la cooperación política y económica (Pastor 1986). Gracias al Sistema de Naciones Unidas, se crearon organismos para que los Estados puedan encargarse de velar por una diversidad de temas, especialmente, tras la falla de la Liga de las Naciones al querer velar por la paz y seguridad a nivel mundial. Entre las distintas organizaciones que se crearon destaca la Organización Mundial de la Salud (OMS), como las que estaban vinculadas al Sistema de Bretton Woods: el Banco Mundial, el Fondo Monetario Internacional y el GATT, posteriormente conocido como la Organización Mundial del Comercio. Paralelamente, surgieron organizaciones regionales de integración o vinculación por temas específicos, como la Unión Africana, la Unión Europea y la Organización de Estados Americanos. 
 
-- Menciona la información previa que existe sobre el tema de interés y la revisión de literatura (políticas públicas previas, marco regulatorio, acción del Estado)
-- Identifica factores que están asociados al problema de interés.
-- Se presenta el objetivo general y objetivos específicos del reporte. Existe congruencia entre ambos.
-- Se formulará la pregunta de investigación. 
-- Se formulan posibles hipótesis de investigación.
-- Redacta con fluidez y de manera organizada.
+Todas estas se encargan de canalizar la cooperación internacional, y se convierten en plataformas mediante las cuales otros Sujetos de Derecho Internacional y actores internacionales pueden adquirir visibilidad, y discutir sobre diversos temas como la protección de los derechos humanos, el medio ambiente, el patrimonio común de la humanidad, etc. Más aún cuando debido a la creciente interdependencia entre países, se observan problemáticas que no son posibles de resolver de manera aislada. En este contexto, el multilateralismo, característica del orden liberal, vislumbraba un camino hacia la gobernanza global. Sin embargo, en los últimos años, se ha observado un fuerte descontento por diversos sectores de la población sobre los efectos de la labor de las organizaciones internacionales. Según Adler y Drieschova (2021), estas solían conformar parte de la autoridad epistémica, es decir, eran instituciones y comunidades en las que se confiaba por producir conocimientos y estándares que representaban la verdad (conocimiento compartido colectivamente). No obstante,  tras la llegada de grupos y gobiernos, como el de Trump y Andrés Manuel López Obrador, que critican a las organizaciones y las comunidades de seguridad pluralistas establecidas, el futuro de las organizaciones es incierto. 
+
+Por ello, resulta interesante analizar el grado de confianza que tienen las personas en las organizaciones internacionales en los últimos años. Como menciona Torgler (2007), son pocos los estudios empíricos realizados en las últimas décadas para medir la confianza, por lo que realiza un estudio sobre la confianza en las Naciones Unidas, mediante indicadores como la confianza en la política, confianza social, corrupción, identificación geográfica y globalización usando la data de World Values Survey que tomaba en consideración 38 países. Asimismo, destaca el estudio de Hessami (2011), sobre los determinantes de la confianza en organizaciones internacionales económicas en la región europea mediante los resultados del Eurobarómetro. Se sugiere que las variables relacionadas a características individuales como la percepción de los efectos de la globalización afectan la actitud que se tiene sobre estas. 
+
+Sin embargo, es igual de importante resaltar que a nivel regional estas organizaciones internacionales participaron y participan activamente en el ámbito peruano. Por un lado, destaca Naciones Unidas, la cual en el año 2017 firmó un Marco de Cooperación con el Gobierno peruano hasta el 2021. Esto como una herramienta de planeación estratégica para promover y llevar a cabo la Agenda para el Desarrollo del 2030 a través del trabajo con Agencias, Fondos y Programas brindados por el Sistema de Naciones Unidas (ONU, 2017). De esta forma se impulsan proyectos para el fin de la pobreza, reducción de hambre, incremento de salud y bienestar, educación de calidad, igualdad de género, reducción de las desigualdades y 10 objetivos adicionales (ONU, 2017). 
+
+Por otro lado, se observa que la OEA durante el 2017-2020 participó activamente en la dinámica peruana. Por ejemplo, durante el 2017, junto al gobierno peruano, comenzó los preparativos para la VIII Cumbre de las Américas que se llevaría a cabo en el 2018 y reuniría a los Jefes de Estado del Hemisferio con la temática “Gobernabilidad democrática frente a la corrupción” para que se siga fortaleciendo la participación de la ciudadanía y de otros actores sociales (OEA, 2017). Así también, la OEA realizó la “Misión de Observación Electoral” en territorio peruano el año 2020, por lo que felicitó la manera en cómo las elecciones se llevaron a cabo y el cumplimiento de las recomendaciones y observaciones brindadas en procesos electorales anteriores (OEA, 2021). 
+
+Además, por su parte, el Fondo Monetario Internacional realizó la “Cuarta Misión de Asistencia Técnica al INEI” en el 2018, esto con el objetivo de analizar los avances por sectores institucionales en cuentas nacionales anuales, sobre todo en cuentas financieras y balances (INEI, 2018). De esta forma, el FMI brindó mayores herramientas, fuentes y métodos para una mejor elaboración de las cuentas trimestrales de los sectores institucionales  (INEI, 2018). Como se aprecia estas organizaciones han tenido gran impacto durante el periodo a estudiar, por lo que deben de haber generado reacciones positivas o negativas en la población peruana. 
+
+Teniendo en consideración que las actividades de la Organización de las Naciones Unidas, el Fondo Monetario Internacional y la Organización de Estados Americanos, han sido constantes en el territorio peruano el presente trabajo tendrá como pregunta de investigación: ¿Qué factores determinan la confianza en las organizaciones internacionales en el Perú durante el periodo 2018-2020?  Por ende, el objetivo principal será definir qué variables impactan en mayor y menor medida la confianza de la población peruana en las organizaciones internacionales, sabiendo que existe un continuo descontento respecto al trabajo que han venido realizando. Dentro de los objetivos específicos, este trabajo desea saber cuanto impactan las variables relacionadas con libertad, sexo, democracia y edad. Así como también con las variables ideología, interés en la política, ingresos socioeconómicos, educación y proximidad al mundo. 
+
+Como se mencionaba, la bibliografía sobre la confianza en las organizaciones internacionales no es extensa, pero la relación que puede tener con las variables propuestas es de sumo interés. Sobre la variable **sexo**, diversos estudios demuestran que las organizaciones internacionales económicas, como el Banco Mundial y el Fondo Monetario Internacional, dictaminan medidas de austeridad y remoldean las economías para que esten orientadas al libre mercado, lo que afecta negativamente a las mujeres (Sparr 1998). Cuando se cortan los servicios sociales como de educación o salud, se confía en que ello será cubierto por madres, hijas, tías, abuelas, haciendo hincapié en la división sexual del trabajo en continentes como África y América Latina, por lo que se intensifica el trabajo doméstico no remunerado en el sector informal (Sparr 1998). Asimismo, en relación a las Naciones Unidas, se cuestiona la responsabilidad de la organizaciones internacionales por la violación de derechos humanos que se llevan a cabo en las intervenciones humanitarias y misiones de paz, como la jerarquía en torno a la distinción entre hombres y mujes en documentos como los Principios Rectores sobre las Empresas y los Derechos Humanos de las Naciones Unidas (Handl y Simons 2019). Por todo ello, se esperaría que las mujeres confíen menos en las organizaciones internacionales económicas que los hombres (Edwards 2009: 190).
+
+Por su parte, sobre las variables **nivel educativo** e **ingresos socioeconómicos**, se encontró que el éxito profesional, relacionado con ambas variables, puede aumentar la confianza de otras personas como su nivel de información sobre hechos actuales,  por lo que pueden conocer mejor los esfuerzos de la ONU y otras organizaciones internacionales para darles respaldo (Torgler 2007). En relación a la **ideología**, por ejemplo, en un análisis del caso estadounidense, se encuentra que los republicanos y las élites políticas conservadoras son más pesimistas respecto a la naturaleza de las relaciones internacionales, y corrientes realistas sugieren que la cesión de soberanía en organizaciones internacionales no es favorable para la política interna (Brewer et al., 2004). En esta misma línea, en un artículo sobre el multilateralismo en EE.UU. pos Segunda Guerra Mundial, Rathbun (2011) encontró que la izquierda está más dispuesta que la derecha hacia las soluciones acordadas debido a su naturaleza “más confiada”, lo que podría trasladarse a otras regiones. Asimismo, en torno a la variable **edad**, se concluye que las experiencias que los estadounidenses mayores han tenido durante sus años de formación (conflictos armados) generan una desconfianza generalizada hacia otras naciones, por lo que no creen en la efectividad de las instituciones internacionales (Brewer et al., 2004).
+
+Sobre el **interés en la política**, Torgler (2007) encuentra en un estudio sobre la confianza en la ONU que, si las personas que son cínicas y pesimistas sobre la política interna, también tendrían esa misma percepción sobre las organizaciones internacionales, más aún si creen que su gobierno no puede satisfacer sus necesidades y derechos, las OI menos. En esa misma línea, sobre el **interés en la democracia**, hubo años en los que los gobiernos de latinoamérica, especialmente del Perú, distaban mucho de ser calificados como democráticos. Es por ello que, en la actualidad, la democracia no es un tema que pasa de manera desapercibida. Diversos son los organismos que velan por su protección y difusión, entre estos se encuentran las organizaciones internacionales como la ONU y OEA, quienes la tienen como pilar en su actuar. El actuar de estas organizaciones se refleja en las diversas resoluciones, tratados, acuerdos, declaraciones, mecanismos de supervisión, entre otros, que han emitido a lo largo de los últimos 60 años a favor de la promoción de valores democráticos (Nuño, 2020).
+
+En torno a la **amenaza de guerra**, Shannon (2009) analiza la relación entre las organizaciones internacionales y el mantenimiento de la paz, teniendo en consideración que previos estudios han encontrado que países miembros de una misma organización reducen la posibilidad de conflicto, por lo que estas fomentarán la paz entre países, especialmente, las que son más estructuradas. De esta manera, las OI serían valiosas para fomentar la participación internacional activa en los conflictos de los miembros, por lo que los ciudadanos de un país podrían. Por otro lado, la **libertad personal** es fundamental en la vida de las personas, su importancia abarca tal magnitud que el artículo 7 de la Convención Americana habla de ella como uno de los derechos principales en la vida de las personas (Leco y Belman, 2018). Es decir, debe de ser protegida de diversos abusos que se puedan cometer por distintos actores. En este punto las organizaciones internacionales juegan un papel clave, ya que posibilitan, protegen  y fomentan grados de libertad y bienestar individual, derechos y una autodeterminación colectiva (Burgos, 2019). 
+
+La decisión de brindar o no confianza a las organizaciones internacionales se basa en los sucesos o hechos del entorno de los encuestados, así como también en los **objetivos** que estos se han establecido (Cabeza de Vergara y Muñoz, 2010). Finalmente, día a día vivimos en un mundo cada vez más globalizado e interconectado, este tema no solo afecta a actores de otra naturaleza, sino también a nosotros como individuos. La globalización implica flujos, no solo materiales o económicos, sino también de ideas, conocimiento e información (Flores, 2016). Por ende, la información del actuar y planes de operación de las organizaciones internacionales no es privada o de difícil acceso, al contrario todos pueden acceder a ella mediante internet, porque nos encontramos **más cerca del mundo**. 
+
+Después de la revisión bibliográfica de las variables a usar, las hipótesis de este trabajo son las siguientes: 
+
+1. Es probable que las variables “interés en la política” y “edad” expliquen en mayor medida la confianza en organizaciones internacionales que la variable “sexo”, ya que a mayor edad y mayor interes en la política, estarán más informados sobre los planes de acción de las organizaciones a estudiar 
+
+2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
+
+3. Las personas con mayor interés y confianza en la democracia, serán las que le brinden un alto grado de confianza y credibilidad a las organizaciones internacionales 
+
 
 
 # 0. Preparación de la data
@@ -237,21 +261,36 @@ summary(data$`Q259: Feel close to the world`)
 
 a. Variables dependientes 
 
-- ONU 
- ```{r}
+Como se emplearan las tres siguientes variables para construir el indicador confianza en las organizaciones internacionales, estas serán tomadas como numéricas. 
+
+**- Variable confianza en la Organización de las Naciones Unidas (ONU)**
+```{r}
 Mode(data$ONU,na.rm = T)
 Median(data$ONU,na.rm = T)
-hist(data$ONU)
+hist(data$ONU, xlab = "Nivel de confianza", ylab = "Frecuencia")
 ```
+
 Se observa que 2 es el grado mayor votado e confianza a la ONU. Asimismo el 50% de personas eligió una confianza mayor o igual a 2, mientras que el otro 50% tiene una confianza menor o igual a 2. 
 
-- FMI 
- ```{r}
+**- Variable confianza en el Fondo Monetario Internacional (FMI)**
+
+```{r}
 Mode(data$FMI,na.rm = T)
 Median(data$FMI,na.rm = T)
-hist(data$FMI)
- ```
-Se observa que 1 es el grado mayor votado e confianza aL FMI. Asimismo el 50% de personas eligió una confianza mayor o igual a 1, mientras que el otro 50% tiene una confianza menor o igual a 1. Es decir, la confianza al FMI es casi nula 
+hist(data$FMI, main="Histograma de confianza en el FMI", xlab = "Nivel de confianza", ylab = "Frecuencia")
+```
+
+
+Se observa que 1 es el grado mayor votado e confianza aL FMI. Asimismo el 50% de personas eligió una confianza mayor o igual a 1, mientras que el otro 50% tiene una confianza menor o igual a 1. Es decir, la confianza en el FMI es casi nula 
+
+
+**- Variable confianza en la Organización de Estados Americanos (OEA)**
+
+```{r}
+table(data$OEA)
+summary(data$OEA)
+hist(data$OEA, main="Confianza en la OEA", xlab = "Nivel de confianza", ylab = "Frecuencia")
+```
 
 
 b. Variables independientes 
@@ -504,12 +543,43 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
 
-**- Variable confianza en la Organización de Estados Americanos (OEA)**
+###. Bibliografía:
 
-```{r}
-table(data$OEA)
-summary(data$OEA)
-```
+Brewer, P.R., Gross, K., Aday, S. and Willnat, L. (2004). International Trust and Public Opinion About World Affairs. American Journal of Political Science, 48: 93-109. https://doi-org.ezproxybib.pucp.edu.pe/10.1111/j.0092-5853.2004.00058.x
+
+ 
+Burgos, J. (2019, 12 abril). Las organizaciones internacionales y sus recursos de poder. Una propuesta analítica. Scielo. Recuperado 29 de octubre de 2021, de http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S0121-51672019000100149
+
+Cabeza De Vergara, L., & Muñoz, A. (2010, 10 enero). ANÁLISIS DEL PROCESO DE TOMA DE DECISIONES, VISIÓN DESDE LA PYME Y LA GRAN EMPRESA DE BARRANQUILLA. Redalyc. Recuperado 29 de octubre de 2021, de https://www.redalyc.org/pdf/4096/409634363002.pdf
+
+Edwards, M. S. (2009). Public support for the international economic organizations: Evidence from developing countries. Review of International Organizations, 4(2), 185- 209.
+
+FMI. (2018). Informe del FMI 2017. Recuperado 29 de octubre de 2021, de https://www.imf.org/external/pubs/ft/ar/2017/eng/assets/languages/IMF-AR17-Spanish.pdf
+
+Hessami, Zohal. (2011). What Determines Trust in International Organizations? An Empirical Analysis for the IMF, the World Bank, and the WTO, 1-31.  
+
+INEI. (2018, 6 agosto). Perú recibe cuarta misión del Fondo Monetario Internacional de Asistencia Técnica en Cuentas Nacionales por Sectores Institucionales Anuales y Trimestrales. Recuperado 29 de octubre de 2021, de https://www.inei.gob.pe/prensa/noticias/peru-recibe-cuarta-mision-del-fondo-monetario-internacional-de-asistencia-tecnica-en-cuentas-nacionales-por-sectores-institucionales-anuales-y-trimestrales-10889/
+
+Leco, C., & Belman, J. (2018). El papel de las organizaciones internacionales en la protección de los derechos humanos de los migrantes en México. Dialnet. Recuperado 29 de octubre de 2021, de https://dialnet.unirioja.es/descarga/articulo/6577165.pdf
+
+Naciones Unidas. (2017). Marco de Cooperación de las Naciones Unidas para el Desarrollo en el Perú 2017-2021. Recuperado 29 de octubre de 2021, de https://peru.un.org/es/48770-marco-de-cooperacion-de-las-naciones-unidas-para-el-desarrollo-en-el-peru-2017-2021
+
+Nuño, A. (2020). Democracia y organismos internacionales. INEI. Recuperado 31 de octubre de 2021, de https://www.ine.mx/wp-content/uploads/2021/02/CDCD-33.pdf
+
+Organización de Estados Americanos. (2017). La OEA y Perú inician preparativos de la VIII Cumbre de las Américas. OEA. Recuperado 29 de octubre de 2021, de https://www.oas.org/es/centro_noticias/fotonoticia.asp?sCodigo=FNC-22071
+
+Organización de Estados Americanos.(2021). La Misión de Observación Electoral de la OEA en Perú saluda a las autoridades peruanas por la implementación de sus recomendaciones. Recuperado 29 de octubre de 2021, de http://www.oas.org/documents/spa/press/Informe-Preliminar-MOE-Peru2020-FINAL.pdf
+Pastor, J.A. Curso de Derecho Internacional Público y Organizaciones Internacionales. 12ma edición. Madrid: Tecnos, 2008, p. 659 –663.
+
+Rathbun, B. C. (2011). The “Magnificent Fraud”: Trust, International Cooperation, and the Hidden Domestic Politics of American Multilateralism after World War II. International Studies Quarterly, 55(1), 1–21. https://doi-org.ezproxybib.pucp.edu.pe/10.1111/j.1468-2478.2010.00633.x
+
+Sparr. P. (1998). Mortgaging Women’s Lives--Feminist Critiques of Structural Adjustment. (1998). Women’s International Network News, 24(1), 15.
+ 
+Simons, P., & Handl, M. (2019). Relations of Ruling: A Feminist Critique of the United Nations Guiding Principles on Business and Human Rights and Violence against Women in the Context of Resource Extraction. Canadian Journal of Women & the Law, 31(1), 113–150. https://doi-org.ezproxybib.pucp.edu.pe/10.3138/cjwl.31.1.06
+ 
+Shannon, M. (2009). Preventing War and Providing the Peace?: International Organizations and the Management of Territorial Disputes. Conflict Management & Peace Science, 26(2), 144–163. https://doi-org.ezproxybib.pucp.edu.pe/10.1177/0738894208101127
+
+Torgler, B. (2008). Trust in international organizations: An empirical investigation focusing on the United Nations. Rev Int Org 3, 65–93. https://doi.org/10.1007/s11558-007-9022-1
 
 
 
