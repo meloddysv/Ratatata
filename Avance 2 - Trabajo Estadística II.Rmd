@@ -543,6 +543,49 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 Después de este análisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
 
+# Componentes principales:
+- ONU
+- FMI 
+- OEA
+
+```{r}
+comp_prin=subset(data,select=c("ONU", "OEA", "FMI"))
+comp_prin=comp_prin[complete.cases(comp_prin[ , 1:3]),]
+library(polycor)
+library(psych)
+str(comp_prin)
+cor(comp_prin)
+library(corrplot)
+corrplot(cor(comp_prin))
+
+corrplot(cor(comp_prin), # Matriz de correlación
+method = "shade", # Método para el gráfico de correlación
+type = "full", # Estilo del gráfico (también "upper" y "lower")
+diag = TRUE, # Si TRUE (por defecto), añade la diagonal
+tl.col = "black", # Color de las etiquetas
+bg = "white", # Color de fondo
+title = "", 
+col = NULL) 
+
+# pruebas
+library(psych)
+psych::KMO(comp_prin)
+
+corMatrix=cor(comp_prin)
+cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
+
+
+fa.parallel(corMatrix, fm="pa", fa="pc", main = "Scree Plot")
+library(FactoMineR)
+res.pca <- PCA(comp_prin, graph = FALSE)
+library(FactoMineR)
+library(factoextra)
+fviz_pca_var(res.pca, col.var = "black",repel = TRUE)
+```
+
+
+
+
 
 ### Bibliografía:
 
