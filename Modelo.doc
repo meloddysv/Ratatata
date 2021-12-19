@@ -42,8 +42,8 @@
 \clbrdrt\brdrw15\brdrs
 \clvertalc\cellx8593 
 \pard\sa0\sb0\intbl\qr{(Intercept)}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{30.50**}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[26.38, 34.62]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{36.90**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[33.36, 40.44]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
@@ -57,9 +57,9 @@
 \clvertalc\cellx5446 
 \clvertalc\cellx6814 
 \clvertalc\cellx8593 
-\pard\sa0\sb0\intbl\qr{sexo_Mujer}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{2.42*}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[0.11, 4.73]}\cell
+\pard\sa0\sb0\intbl\qr{sexo_Hombre}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{-1.93}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[-4.26, 0.39]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{.00}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .01]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
@@ -74,8 +74,8 @@
 \clvertalc\cellx6814 
 \clvertalc\cellx8593 
 \pard\sa0\sb0\intbl\qr{`educacion_Post-secundario`}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{4.81**}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[2.08, 7.54]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{5.16**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[2.39, 7.93]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{.01}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .02]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
@@ -89,11 +89,11 @@
 \clvertalc\cellx5446 
 \clvertalc\cellx6814 
 \clvertalc\cellx8593 
-\pard\sa0\sb0\intbl\qr{Ideologia_Derecha}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{4.24**}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[1.72, 6.77]}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx130{.01}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .02]}\cell
+\pard\sa0\sb0\intbl\qr{Ideologia_Izquierda}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{-0.07}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[-3.58, 3.43]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{.00}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .00]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
 \row
 }
@@ -105,11 +105,11 @@
 \clvertalc\cellx5446 
 \clvertalc\cellx6814 
 \clvertalc\cellx8593 
-\pard\sa0\sb0\intbl\qr{Ingresos_Medio}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{3.97**}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[1.50, 6.45]}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx130{.01}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .02]}\cell
+\pard\sa0\sb0\intbl\qr{Ingresos_Alto}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{-0.31}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[-4.61, 4.00]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx130{.00}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .00]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
 \row
 }
@@ -122,8 +122,8 @@
 \clvertalc\cellx6814 
 \clvertalc\cellx8593 
 \pard\sa0\sb0\intbl\qr{Edad}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx547{-0.08*}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[-0.15, -0.00]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx547{-0.09*}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx277{[-0.16, -0.01]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{.00}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{[-.00, .01]}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx267{}\cell
@@ -142,7 +142,7 @@
 \pard\sa0\sb0\intbl\tqdec\tldot\tx277{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx267{{\i R\super 2 \nosupersub}  = .031**}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx267{{\i R\super 2 \nosupersub}  = .016**}\cell
 \row
 }
 {
@@ -158,7 +158,7 @@
 \pard\sa0\sb0\intbl\tqdec\tldot\tx277{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx130{}\cell
 \pard\sa0\sb0\intbl\tqdec\tldot\tx205{}\cell
-\pard\sa0\sb0\intbl\tqdec\tldot\tx267{95% CI[.01,.05]}\cell
+\pard\sa0\sb0\intbl\tqdec\tldot\tx267{95% CI[.00,.03]}\cell
 \row
 }
 {

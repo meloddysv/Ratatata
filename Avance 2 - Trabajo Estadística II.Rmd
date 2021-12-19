@@ -614,35 +614,59 @@ summary(data$con_organizaciones)
 
 # 2. Análisis
 
-## a. Hipótesis 1: Es probable que las variables “interés en la política” y “edad” expliquen en mayor medida la confianza en organizaciones internacionales que la variable “sexo”, ya que a mayor edad y mayor interes en la política, estarán más informados sobre los planes de acción de las organizaciones a estudiar 
+## a. Hipótesis 1: Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a personas jóvenes. 
 
 
 ```{r}
 library(fastDummies)
 data=dummy_cols(data,  select_columns = c("sexo","educacion", "Ingresos", "Ideologia"))
 
-ml3 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Medio+ Edad, data=data)
-summary(ml3)
 
-ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio+ Edad, data=data)
+ml1 <- lm(con_organizaciones ~  sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Alto+ Edad, data=data)
+summary(ml1)
+
+
+ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 summary(ml2)
 
-ml1 <- lm(con_organizaciones ~  `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio+ Edad, data=data)
-summary(ml1)
+ml3 <- lm(con_organizaciones ~ `educacion_Post-secundario` +Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
+summary(ml3)
+
+ml4 <- lm(con_organizaciones ~ sexo_Hombre + `educacion_Secundario` + Ideologia_Derecha + Ingresos_Bajo + Edad, data=data)
+summary(ml4)
+
 
 library(apaTables)
 APA <- apa.reg.table(ml1, filename="Modelo.doc", table.number = 4)
 APA
-
-library(stargazer)
-stargazer(ml1, ml2, ml3, type="text")
 ```
+
+
+```{r results='asis'}
+library(stargazer)
+stargazer(ml1, ml2, ml3, ml4, 
+          type= "html", 
+          title = "Modelos de regresión lineal múltiple de las variables clásicas",
+          covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
+                               "Altos ingresos", "Educación secundaria", "Ideología de derecha", 
+                               "Ingresos Medios", "Ingresos Bajos", "Edad"),    
+          dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
+          style = "asq", 
+          digits = 2,
+          omit.stat = c("rsq", "f"),
+          align=TRUE)
+
+
+#asq interesante, sale en negrits pero no hay separacion
+
+```
+
 
 **Sobre el modelo**
 
 -a. Como el p-valor (3.14e-08) es menor a 0.05, se rechaza la hipótesis nula (H0: El modelo no es válido), por lo que el modelo sí es válido. 
 
--b.El modelo explica el 3.05% de la variabilidad de confianza en las organizaciones internacionales, un porcentaje bajo. 
+-b.El modelo explica el 2.7% de la variabilidad de confianza en las organizaciones internacionales, un porcentaje bajo. 
 
 -c. Como todos los p-valores de las variables son menores a 0.05, se concluye sí aportan al modelo. 
 
