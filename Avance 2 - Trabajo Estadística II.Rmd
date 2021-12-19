@@ -602,14 +602,13 @@ comp<-as.data.frame(comp1$scores)
 summary(comp$PC1)
 data$con_org<- (comp$PC1)
 data$con_org=as.numeric(data$con_org)
+
 library(BBmisc)
 data$con_organizaciones= normalize(data$con_org, 
-                                        method = "range", 
-                                        margin=2, # by column
-                                        range = c(0, 100))
+                                   method = "range", 
+                                   margin=2,
+                                   range = c(0, 100))
 data$con_organizaciones=as.numeric(data$con_organizaciones)
-
-summary(data$con_organizaciones)
 ```
 
 # 2. Análisis
@@ -620,59 +619,50 @@ summary(data$con_organizaciones)
 ```{r}
 library(fastDummies)
 data=dummy_cols(data,  select_columns = c("sexo","educacion", "Ingresos", "Ideologia"))
+```
 
 
-ml1 <- lm(con_organizaciones ~  sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Alto+ Edad, data=data)
-summary(ml1)
+```{r}
+ml1 <- lm(con_organizaciones ~ sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Alto + Edad, data=data)
 
+ml2 <- lm(con_organizaciones ~  sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Medio+ Edad, data=data)
 
-ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
-summary(ml2)
+ml3 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 
-ml3 <- lm(con_organizaciones ~ `educacion_Post-secundario` +Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
-summary(ml3)
-
-ml4 <- lm(con_organizaciones ~ sexo_Hombre + `educacion_Secundario` + Ideologia_Derecha + Ingresos_Bajo + Edad, data=data)
-summary(ml4)
-
-
-library(apaTables)
-APA <- apa.reg.table(ml1, filename="Modelo.doc", table.number = 4)
-APA
+ml4 <- lm(con_organizaciones ~  `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 ```
 
 
 ```{r results='asis'}
 library(stargazer)
 stargazer(ml1, ml2, ml3, ml4, 
-          type= "html", 
-          title = "Modelos de regresión lineal múltiple de las variables clásicas",
-          covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
-                               "Altos ingresos", "Educación secundaria", "Ideología de derecha", 
-                               "Ingresos Medios", "Ingresos Bajos", "Edad"),    
+          type= "text", 
+          title = "Modelos de regresión lineal múltiple de las variables clásicas",    
           dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
-          style = "asq", 
-          digits = 2,
-          omit.stat = c("rsq", "f"),
+          digits = 3,
           align=TRUE)
-
-
-#asq interesante, sale en negrits pero no hay separacion
-
 ```
 
+- Cabe resaltar que odos los modelos son válidos, pues sus p-valores son menores a 0.05. 
 
+
+
+covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
+                               "Altos ingresos", "Educación secundaria", "Ideología de derecha", 
+                               "Ingresos Medios", "Ingresos Bajos", "Edad")
+ omit.stat = c("rsq", "f"),
+ 
 **Sobre el modelo**
 
--a. Como el p-valor (3.14e-08) es menor a 0.05, se rechaza la hipótesis nula (H0: El modelo no es válido), por lo que el modelo sí es válido. 
+- a. Como el p-valor (3.14e-08) es menor a 0.05, se rechaza la hipótesis nula (H0: El modelo no es válido), por lo que el modelo sí es válido. 
 
--b.El modelo explica el 2.7% de la variabilidad de confianza en las organizaciones internacionales, un porcentaje bajo. 
+- b. El modelo explica el 2.7% de la variabilidad de confianza en las organizaciones internacionales, un porcentaje bajo. 
 
--c. Como todos los p-valores de las variables son menores a 0.05, se concluye sí aportan al modelo. 
+- c. Como todos los p-valores de las variables son menores a 0.05, se concluye sí aportan al modelo. 
 
--d. Edad tiene una relación inversa con la confianza en las organizaciones internacionales, es decir, las personas jóvenes confian mas mientras que las mayores menos. 
+- d. Edad tiene una relación inversa con la confianza en las organizaciones internacionales, es decir, las personas jóvenes confian mas mientras que las mayores menos. 
 
--e. Ecuación final:
+- e. Ecuación final:
 Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Mujer) + (4.81167*educacion_Post-secundario) + (4.24173*Ideologia_Derecha) + (3.97434+Ingresos_Medios) + (-0.07809*Edad)
 
 
@@ -681,8 +671,8 @@ Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Muje
 ## b. Hipótesis 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 ```{r}
-ml2 <- lm(con_organizaciones ~ interes_pol + democracia + preo_guerra + lib_igualdad + objetivos_encuestado + mundo , data=data)
-summary(ml2)
+ml5 <- lm(con_organizaciones ~ interes_pol + democracia + preo_guerra + lib_igualdad + objetivos_encuestado + mundo , data=data)
+summary(ml5)
 ```
 
 
