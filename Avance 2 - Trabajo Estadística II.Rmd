@@ -610,42 +610,32 @@ data$con_organizaciones= normalize(data$con_org,
 data$con_organizaciones=as.numeric(data$con_organizaciones)
 
 summary(data$con_organizaciones)
-
-# VARIABLE ALTA Y BAJA CONFIANZA 
-
-data$confianza = cut(data$con_organizaciones, breaks = c(0, 33.64,100),
-                                  include.lowest = T, ordered_result = T,
-                                  labels = c("Baja Confianza", "Alta Confianza"))
-
-table(data$confianza)
 ```
 
 # 2. Análisis
 
 ## a. Hipótesis 1: Es probable que las variables “interés en la política” y “edad” expliquen en mayor medida la confianza en organizaciones internacionales que la variable “sexo”, ya que a mayor edad y mayor interes en la política, estarán más informados sobre los planes de acción de las organizaciones a estudiar 
 
-```{r}
-# BAJA CONFIANZA Y ALTA CONFIANZA
-modelo1 = glm(confianza ~ sexo_Hombre + `educacion_Post-secundario` + Ideologia_Centro + Ingresos_Bajo+ Edad ,family = binomial(link="logit") ,data = data)
-summary(modelo1)
-
-pseudo1 = 1-(modelo1$deviance/modelo1$null.deviance)
-pseudo1
-```
-
 
 ```{r}
 library(fastDummies)
 data=dummy_cols(data,  select_columns = c("sexo","educacion", "Ingresos", "Ideologia"))
-ml1 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio+ Edad, data=data)
-summary(ml1)
 
-ml2 <- lm(con_organizaciones ~ Ingresos_Medio + Edad + Ideologia_Centro, data=data)
+ml3 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Medio+ Edad, data=data)
+summary(ml3)
+
+ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio+ Edad, data=data)
 summary(ml2)
+
+ml1 <- lm(con_organizaciones ~  `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio+ Edad, data=data)
+summary(ml1)
 
 library(apaTables)
 APA <- apa.reg.table(ml1, filename="Modelo.doc", table.number = 4)
 APA
+
+library(stargazer)
+stargazer(ml1, ml2, ml3, type="text")
 ```
 
 **Sobre el modelo**
@@ -660,8 +650,6 @@ APA
 
 -e. Ecuación final:
 Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Mujer) + (4.81167*educacion_Post-secundario) + (4.24173*Ideologia_Derecha) + (3.97434+Ingresos_Medios) + (-0.07809*Edad)
-
-
 
 
 
