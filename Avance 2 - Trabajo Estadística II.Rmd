@@ -549,18 +549,17 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 Para realizar el análisis, se realizará un indicador a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semiprobabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre munchos otros temas. 
 
-De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. 
-
-
-
-
-De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
+De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. Para conformarla, se empleará una técnica de reducción de dimensiones, específicamente, el análisis por componentes principales, ya que se busca reducir el número de dimensiones en relación a la varianza total. 
 
 ### Creación de la variable Confianza en las Organizaciones Internacionales por Componentes Principales
+
 Variables a usar:
-- ONU
-- FMI 
-- OEA
+
+- Confianza en la Organización de Naciones Unidas (ONU)
+- Confianza en el Fondo Monetario Internacional (FMI)
+- Confianza en la Organización de Estados Americanos (OEA)
+
+**
 
 ```{r}
 comp_prin=subset(data,select=c("ONU", "OEA", "FMI"))
@@ -581,6 +580,7 @@ title = "",
 col = NULL)
 ```
 
+**
 
 ```{r}
 # pruebas
@@ -591,6 +591,7 @@ corMatrix=cor(comp_prin)
 cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```
 
+**
 
 ```{r}
 fa.parallel(corMatrix, fm="pa", fa="pc", main = "Scree Plot")
@@ -604,7 +605,8 @@ eig.val
 ```
 
 
-Añadir variable
+**Añadir variable Confianza en las OI a la base de datos**
+
 ```{r}
 comp1<- pca(comp_prin,nfactors = 1,rotate = "varimax")
 comp<-as.data.frame(comp1$scores)
