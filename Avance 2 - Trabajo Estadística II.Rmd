@@ -545,6 +545,8 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
 
+## 2. Metodología
+
 Después de este análisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
 
 ### Creación de la variable Confianza en las Organizaciones Internacionales por Componentes Principales
@@ -611,7 +613,9 @@ data$con_organizaciones= normalize(data$con_org,
 data$con_organizaciones=as.numeric(data$con_organizaciones)
 ```
 
-# 2. Análisis
+# 3. Hallazgos 
+
+xxx
 
 ## a. Hipótesis 1: Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a hombres jóvenes. 
 
@@ -625,17 +629,13 @@ data=dummy_cols(data,  select_columns = c("sexo","educacion", "Ingresos", "Ideol
 ```{r}
 ml1 <- lm(con_organizaciones ~ sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Alto + Edad, data=data)
 
-ml2 <- lm(con_organizaciones ~  sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Medio+ Edad, data=data)
-
-ml3 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
-
-ml4 <- lm(con_organizaciones ~  `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
+ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 ```
 
 
 ```{r results='asis'}
 library(stargazer)
-stargazer(ml1, ml2, ml3, ml4, 
+stargazer(ml1, ml2, 
           type= "text", 
           title = "Modelos de regresión lineal múltiple de las variables clásicas",    
           dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
@@ -647,7 +647,7 @@ stargazer(ml1, ml2, ml3, ml4,
 
 Se realizó el primer modelo de regresión tomando en cuenta a las variables, sexo-Hombre, educación pos secundario, idelogía de izquierda, ingresos altos y edad. Si bien el modelo es válido, los p-valores de idelogía de izquierda, sexo hombre e ingresos altos son menores a 0.05, por lo tanto, las variables no aportan en la construcción del modelo. Ello permite negar que la izquierda necesariamente prefiere el multilateralismo, reflejo de las organizaciones internacionales, y que las personas con ingresos altos confien mas en las OI, dado que sus intereses podrían contraponerse a los objetivos de las OIs. Por lo tanto, se procedió a realizar un segundo modelo con otras categorias de las variables elegidas. En este, se toma en cuenta la variable sexo-mujer, educación pos secundaria, ideología de derecha, ingresos medios y edad. En este modelo, todas las variables aportan al modelo, y este explica el 0.027 de la variabilidad de confianza en las organizaciones internacionales,un porcentaje bajo pero mejor que el del primer modelo. 
 
-En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser las mas afectadas por medidas economicas y neoliberales tomadas por las OI, confiarian menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la busqeuda de la igualdad y seguridad. Del mismo modo, ideologia de derecha en este modelo si es significativo, por lo que se puede afirmar que las personas del ala conservadora podrian respetar valores... Ingresos medios sí es signficativo. Finlamente, edad es la única variable con una relación inversa a la confianza, lo que confirma la literatura: las personas mayores no confian en las OI, mientras que a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
+En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser las mas afectadas por medidas economicas y neoliberales tomadas por las OI, confiarian menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la busqueda de la igualdad y seguridad. Del mismo modo, ideologia de derecha en este modelo si es significativo, por lo que se puede afirmar que las personas del ala conservadora podrian respetar valores... Ingresos medios sí es signficativo. Finalmente, edad es la única variable con una relación inversa a la confianza, lo que confirma la literatura: las personas mayores no confian en las OI, mientras que a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
 
 rian mas cercanos a analisis que realizan balances sobre la capacidad y eficiencia de estas. 
 
@@ -678,14 +678,34 @@ Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Muje
 ## b. Hipótesis 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 ```{r}
-ml5 <- lm(con_organizaciones ~ interes_pol + democracia + preo_guerra + lib_igualdad + objetivos_encuestado + mundo , data=data)
-summary(ml5)
+ml3 <- lm(con_organizaciones ~ interes_pol + democracia + preo_guerra + lib_igualdad + objetivos_encuestado + mundo , data=data)
+summary(ml3)
 ```
 
+Se observa que el modelo es válido y explica solo el 3.7%. Sin embargo, no todas sus variables aportan al modelo, es por ello que se creará un nuevo modelo con solo algunas de estas variables
 
+```{r}
+library(fastDummies)
+data=dummy_cols(data,select_columns = c("preo_guerra"))
+data=dummy_cols(data,select_columns = c("lib_igualdad"))
+data=dummy_cols(data,select_columns = c("mundo"))
+data=dummy_cols(data,select_columns = c("interes_pol"))
+levels(data$mundo)
 
+ml4 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+preo_guerra_Mucho+ lib_igualdad_Libertad+mundo , data=data)
+summary(ml4)
+```
 
+Con variables que sí aportan al modelo, este explica el 3.5%, lo que demuestra que las variables que afectan directamente la confianza en las organizaciones solo son 5. 
 
+# 4. Conclusiones
+
+Elabora conclusiones señalando el aporte de su trabajo a la literatura actual y las limitaciones de su trabajo.
+Analiza las implicaciones de los hallazgos, así como de sus posibles aplicaciones prácticas.
+Hace referencia a las limitaciones del reporte
+Realiza recomendaciones de investigación o de generación de evidencia para
+atender aspectos no resueltos por el reporte.
+Redacta con fluidez.
 
 
 
