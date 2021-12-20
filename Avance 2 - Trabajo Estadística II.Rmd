@@ -613,7 +613,7 @@ data$con_organizaciones=as.numeric(data$con_organizaciones)
 
 # 2. Análisis
 
-## a. Hipótesis 1: Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a personas jóvenes. 
+## a. Hipótesis 1: Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a hombres jóvenes. 
 
 
 ```{r}
@@ -643,7 +643,14 @@ stargazer(ml1, ml2, ml3, ml4,
           align=TRUE)
 ```
 
-- Cabe resaltar que odos los modelos son válidos, pues sus p-valores son menores a 0.05. 
+*Análisis:*
+
+Se realizó el primer modelo de regresión tomando en cuenta a las variables, sexo-Hombre, educación pos secundario, idelogía de izquierda, ingresos altos y edad. Si bien el modelo es válido, los p-valores de idelogía de izquierda, sexo hombre e ingresos altos son menores a 0.05, por lo tanto, las variables no aportan en la construcción del modelo. Ello permite negar que la izquierda necesariamente prefiere el multilateralismo, reflejo de las organizaciones internacionales, y que las personas con ingresos altos confien mas en las OI, dado que sus intereses podrían contraponerse a los objetivos de las OIs. Por lo tanto, se procedió a realizar un segundo modelo con otras categorias de las variables elegidas. En este, se toma en cuenta la variable sexo-mujer, educación pos secundaria, ideología de derecha, ingresos medios y edad. En este modelo, todas las variables aportan al modelo, y este explica el 0.027 de la variabilidad de confianza en las organizaciones internacionales,un porcentaje bajo pero mejor que el del primer modelo. 
+
+En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser las mas afectadas por medidas economicas y neoliberales tomadas por las OI, confiarian menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la busqeuda de la igualdad y seguridad. Del mismo modo, ideologia de derecha en este modelo si es significativo, por lo que se puede afirmar que las personas del ala conservadora podrian respetar valores... Ingresos medios sí es signficativo. Finlamente, edad es la única variable con una relación inversa a la confianza, lo que confirma la literatura: las personas mayores no confian en las OI, mientras que a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
+
+rian mas cercanos a analisis que realizan balances sobre la capacidad y eficiencia de estas. 
+
 
 
 
