@@ -639,6 +639,10 @@ stargazer(ml1, ml2,
           type= "text", 
           title = "Modelos de regresión lineal múltiple de las variables clásicas",    
           dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
+          covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
+                               "Altos ingresos", "Ideología de derecha", 
+                               "Ingresos Medios", "Edad", "Constante"),
+          omit.stat = c("rsq", "f"),
           digits = 3,
           align=TRUE)
 ```
@@ -651,13 +655,6 @@ En este modelo, sexo-mujer tiene una relación directa con la confianza en las o
 
 rian mas cercanos a analisis que realizan balances sobre la capacidad y eficiencia de estas. 
 
-
-
-
-covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
-                               "Altos ingresos", "Educación secundaria", "Ideología de derecha", 
-                               "Ingresos Medios", "Ingresos Bajos", "Edad")
- omit.stat = c("rsq", "f"),
  
 **Sobre el modelo**
 
