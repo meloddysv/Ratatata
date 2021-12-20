@@ -547,7 +547,7 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 ## 2. Metodología
 
-Para realizar el análisis, se realizará un indicador a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semiprobabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre munchos otros temas. 
+Para realizar el análisis, se realizará el indicador confianza en las organizaciones internacionales, a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semiprobabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre munchos otros temas. 
 
 De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. Para conformarla, se empleará una técnica de reducción de dimensiones, específicamente, el análisis por componentes principales, ya que se busca reducir el número de dimensiones en relación a la varianza total. 
 
@@ -572,6 +572,7 @@ corMatrix=cor(comp_prin)
 library(ggcorrplot)
 ggcorrplot(corMatrix,colors = c("#ff0000", "white", "#0000ff"))
 ```
+- La relación entre las variables es positiva, destaca que la relación entre confianza en la ONU y la OEA sea de 0.8, mientras que el FMI con la ONU y la OEA sean respectivamente de 0.42 y 0.38. 
 
 **b. Diagnóstico de la matriz de correlaciones**
 
@@ -601,6 +602,7 @@ eig.val <-get_eig(res.pca)
 eig.val
 ```
 
+- En este caso, se observa que el 70% de la varianza se encuentra en la dimensión 1, es decir, se agrupa la mayor cantidad de información en un solo componente, y el gráfico de sedimentación también recomienda crear uno solo. Es por ello que se optará por crear una sola variable, la cual se llamará confianza en las organizaciones internacionales dado que agrupa a tres que tienen un gran impacto en la región y en el mundo. 
 
 **d. Añadir variable Confianza en las Organizaciones Internacionales a la base de datos**
 
@@ -619,6 +621,8 @@ data$con_organizaciones= normalize(data$con_org,
 data$con_organizaciones=as.numeric(data$con_organizaciones)
 summary(data$con_organizaciones)
 ```
+
+
 
 # 3. Hallazgos 
 
@@ -643,7 +647,7 @@ ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideolo
 ```{r results='asis'}
 library(stargazer)
 stargazer(ml1, ml2, 
-          type= "text", 
+          type= "html", 
           title = "Modelos de regresión lineal múltiple de las variables clásicas",    
           dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
           covariate.labels = c("Hombre", "Mujer", "Educación pos-secundaria", "Ideología izquierda", 
@@ -658,35 +662,16 @@ stargazer(ml1, ml2,
 
 Se realizó el primer modelo de regresión tomando en cuenta a las variables, sexo-Hombre, educación pos secundario, idelogía de izquierda, ingresos altos y edad. Si bien el modelo es válido, los p-valores de idelogía de izquierda, sexo hombre e ingresos altos son menores a 0.05, por lo tanto, las variables no aportan en la construcción del modelo. Ello permite negar que la izquierda necesariamente prefiere el multilateralismo, reflejo de las organizaciones internacionales, y que las personas con ingresos altos confien mas en las OI, dado que sus intereses podrían contraponerse a los objetivos de las OIs. Por lo tanto, se procedió a realizar un segundo modelo con otras categorias de las variables elegidas. En este, se toma en cuenta la variable sexo-mujer, educación pos secundaria, ideología de derecha, ingresos medios y edad. En este modelo, todas las variables aportan al modelo, y este explica el 0.027 de la variabilidad de confianza en las organizaciones internacionales,un porcentaje bajo pero mejor que el del primer modelo. 
 
-En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser las mas afectadas por medidas economicas y neoliberales tomadas por las OI, confiarian menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la busqueda de la igualdad y seguridad. Del mismo modo, ideologia de derecha en este modelo si es significativo, por lo que se puede afirmar que las personas del ala conservadora podrian respetar valores... Ingresos medios sí es signficativo. Finalmente, edad es la única variable con una relación inversa a la confianza, lo que confirma la literatura: las personas mayores no confian en las OI, mientras que a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
+En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser un grupo profundamente afectado por medidas económicas y neoliberales tomadas por las OI, confiarían menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la búsqueda de la igualdad y seguridad. Del mismo modo, ideología de derecha en este modelo sí es significativo, por lo que se podría afirmar que las personas del ala conservadora podrían compartir ciertos valores que las oI defienden, como la no intervención y el respeto a la soberanía de cadd Estado. Por otro lado, ingresos es significativo si se toma en consideración el nivel medios. Finalmente, edad es la única variable con una relación inversa a la confianza (-0.078), lo que confirma la literatura: las personas mayores no confian en las OI, pues estariiían maás cercanos a realizar un balance sobre la capacidad y eficiencia de las OIs en base a experiencias previas, como intervenciones humanitarias o guerras. Por el contrario, a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
 
-rian mas cercanos a analisis que realizan balances sobre la capacidad y eficiencia de estas. 
 
- 
-**Sobre el modelo**
-
-- a. Como el p-valor (3.14e-08) es menor a 0.05, se rechaza la hipótesis nula (H0: El modelo no es válido), por lo que el modelo sí es válido. 
-
-- b. El modelo explica el 2.7% de la variabilidad de confianza en las organizaciones internacionales, un porcentaje bajo. 
-
-- c. Como todos los p-valores de las variables son menores a 0.05, se concluye sí aportan al modelo. 
-
-- d. Edad tiene una relación inversa con la confianza en las organizaciones internacionales, es decir, las personas jóvenes confian mas mientras que las mayores menos. 
-
-- e. Ecuación final:
+- Ecuación final:
 Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Mujer) + (4.81167*educacion_Post-secundario) + (4.24173*Ideologia_Derecha) + (3.97434+Ingresos_Medios) + (-0.07809*Edad)
-
-
-
 
 ## b. Hipótesis 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 ```{r}
-data=dummy_cols(data,select_columns = c("preo_guerra"))
-data=dummy_cols(data,select_columns = c("lib_igualdad"))
-data=dummy_cols(data,select_columns = c("mundo"))
-data=dummy_cols(data,select_columns = c("interes_pol"))
-data=dummy_cols(data,select_columns = c("objetivos_encuestado"))
+data=dummy_cols(data,select_columns = c("preo_guerra", "lib_igualdad", "mundo", "interes_pol", "objetivos_encuestado"))
 
 ml3 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+`mundo_Muy cerca`+ lib_igualdad_Libertad+interes_pol_Mucho+`objetivos_encuestado_Mantener el orden`, data=data)
 
