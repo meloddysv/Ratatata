@@ -584,6 +584,7 @@ psych::KMO(comp_prin)
 # Prueba de esfericidad de Barlet
 cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```
+
 - Como en la prueba del KKMO el overall MSA es 0.6, mayor a 0.5, y la Prueba de esfericidad de Barlet sale falsa, confirmando que la matriz de correlación no es una matriz identidad, se puede continuar con el análisis.
 
 
@@ -695,17 +696,18 @@ conf_organizaciones= 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (se
 
 ```{r}
 #ejemplo 1
-23.04630+(0.79682*10)+(5.51303*1)+(2.59468*0)+(4.01992*1)+(3.94390*1)+(0* 3.57365)-(40* -0.08409)
+23.04630 + (0.79682*10)+(5.51303*1)+(2.59468*0) + (4.01992*1) + (3.94390*1) + (0* 3.57365) + (40* -0.08409)
 
 #ejemplo 2 
-23.04630+(0.79682*9)+(5.51303*1)+(2.59468*1)+(4.01992*1)+(3.94390*0)+(1* 3.57365)-(25* -0.08409)
+23.04630 + (0.79682*10) + (5.51303*1) + (2.59468*1) + (4.01992*1) + (3.94390*1) + (1* 3.57365) + (18* -0.08409)
 
 #ejemplo 3
-23.04630+(0.79682*10)+(5.51303*1)+(2.59468*1)+(4.01992*1)+(3.94390*1)+(1* 3.57365)-(50* -0.08409)
+23.04630 + (0.79682*3) + (5.51303*0) + (2.59468*0) + (4.01992*0) + (3.94390*0) + (1* 3.57365) + (50* -0.08409)
 ```
 
 
 Después de haber realizado la división de las variables usadas en el trabajo en dos grupos y de encontrar cuáles eran las que aportaban mayor explicación a la variable dependiente, estas serán fusionadas en el modelo final que explicará la confianza en las organizaciones internacionales. De esta manera, la percepción de esar muy cerca al mundo, ser mujer, poseer una educación post secundaria, ser de derecha y tener ingresos medios serán las variables a usar. 
+
 El modelo final explica el 4%, más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 25 años, poseen una educación post ecundaria, no son de derecha y tienen ingresos medios, poseen un nivel de confianza en las instituciones medio-bajo. Lo mismo pasará si los encuestados fueron hombres de 40 años con ideología de derecha, sin ingresos medios y sin educación post secundaria. Por otro lado, las mujeres de 50 años con ideología de derecha, estudios post secundarios, que se siente muy cerca al mundo y defiende la democracia poseeran un nivel medio-alto de confianza en las organizaciones internacionales 
 
 
