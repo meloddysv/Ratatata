@@ -681,7 +681,7 @@ summary(ml3)
 summary(ml4)
 ```
 
-Se realizó el tercer modelo de regresión tomando en cuenta a las variables, objetivos_encuestado_mantener el orde, interes_pol_mucho, lib_igualdad_Libertad, democracia, preo_guerra_bastante y democracia. Este modelo es válido y expxlica el 1.8%, por lo que se experimentó realizando diversas combinaciones para lograr un porcentaje de explicación más alto;sin embargo, no se encontró otro modelo con un porcentaje de explicación mayor al del tercer modelo. Y esto se debe a que, como se observó en la revisión de la literatura, el nivel de importancia que una persona le otorgue a la política tendrá repercusiones en su percepción sobre las organizaciones internacionales. De la misma forma, la importancia que el encuestado le brinde a la democracia se reflejará en su confianza en las organizaciones internacionales, ya que ellas están encargadas de velar por su protección. Para ambos modelos la amenaza de guerra ha sido una variable significativa, lo que refleja que los autores decritos en la revisión de la literatura estaban en lo correcto al afirmar la relación estrecha entre la confianza a las organizaciones internacionales y una fuerte preocupación por la amenaza de guerra, ya que la mayoria de estas como la ONU se han construido en relación al mantenmiento de la paz. Finalmente, la mayor importancia a la libertad que a la igualdad refleja que los encuestados asocian en mayor medida la construccion y el funcionamiento de las organizaciones internacionales con la libertad que con la igualdad.
+Se realizó el tercer modelo de regresión tomando en cuenta a las variables, objetivos_encuestado_mantener el orden, interes_pol_mucho, lib_igualdad_Libertad, democracia, preo_guerra_bastante y democracia. Este modelo es válido y explica el 1.8%, por lo que se experimentó realizando diversas combinaciones para lograr un porcentaje de explicación más alto;sin embargo, no se encontró otro modelo con un porcentaje de explicación mayor al del tercer modelo. Y esto se debe a que, como se observó en la revisión de la literatura, el nivel de importancia que una persona le otorgue a la política tendrá repercusiones en su percepción sobre las organizaciones internacionales. De la misma forma, la importancia que el encuestado le brinde a la democracia se reflejará en su confianza en las organizaciones internacionales, ya que ellas están encargadas de velar por su protección. Para ambos modelos la amenaza de guerra ha sido una variable significativa, lo que refleja que los autores descritos en la revisión de la literatura estaban en lo correcto al afirmar la relación estrecha entre la confianza a las organizaciones internacionales y una fuerte preocupación por la amenaza de guerra, ya que la mayoría de estas como la ONU se han construido en relación al mantenimiento de la paz. Finalmente, la mayor importancia a la libertad que a la igualdad refleja que los encuestados asocian en mayor medida la construcción y el funcionamiento de las organizaciones internacionales con la libertad que con la igualdad.
 
 
 MODELO FINAL 
@@ -692,7 +692,7 @@ summary(mf)
 
 Modelo: 
 
-conf_organizaciones= 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992)+(Ideologia_Derecha*3.94390)+(Ingresos_Medio* 3.57365)-(Edad* -0.08409)
+conf_organizaciones= 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992) + (Ideologia_Derecha*3.94390) + (Ingresos_Medio* 3.57365)-(Edad* -0.08409)
 
 ```{r}
 #ejemplo 1
@@ -712,6 +712,14 @@ El modelo final explica el 4%, más que los modelos anteriores, y ayuda a descub
 
 
 # 4. Conclusiones
+
+A partir del análisis realizado, se concluye que si existen variables que pueden determinar la confianza en las organizaciones internacionales en el Perú. En un inicio, este trabajo considero doce variables de la base de datos de la Encuesta de Valores 2018. Sin embargo, mientras se realizaron las pruebas estadisticas ya descritas, se encontro que no tenian le mismo nivel de significancia para explicar a la variable dependiente. 
+
+Por un lado, en relacioo4ón a la primera hipotesis, 
+
+Por otro lado, 
+
+
 
 Elabora conclusiones señalando el aporte de su trabajo a la literatura actual y las limitaciones de su trabajo.
 Analiza las implicaciones de los hallazgos, así como de sus posibles aplicaciones prácticas.
