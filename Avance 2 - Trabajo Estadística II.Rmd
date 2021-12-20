@@ -565,21 +565,12 @@ Variables a usar:
 comp_prin=subset(data,select=c("ONU", "OEA", "FMI"))
 library(polycor)
 library(psych)
-str(comp_prin)
-cor(comp_prin)
 library(corrplot)
-corrplot(cor(comp_prin))
-
-corrplot(cor(comp_prin), # Matriz de correlación
-method = "shade", # Método para el gráfico de correlación
-type = "full", # Estilo del gráfico (también "upper" y "lower")
-diag = TRUE, # Si TRUE (por defecto), añade la diagonal
-tl.col = "black", # Color de las etiquetas
-bg = "white", # Color de fondo
-title = "", 
-col = NULL)
+cor(comp_prin)
 
 corMatrix=cor(comp_prin)
+library(ggcorrplot)
+ggcorrplot(corMatrix,colors = c("#ff0000", "white", "#0000ff"))
 ```
 
 **b. Diagnóstico de la matriz de correlaciones**
@@ -611,7 +602,7 @@ eig.val
 ```
 
 
-**d. Añadir variable Confianza en las OI a la base de datos**
+**d. Añadir variable Confianza en las Organizaciones Internacionales a la base de datos**
 
 ```{r}
 comp1<- pca(comp_prin,nfactors = 1,rotate = "varimax")
@@ -626,6 +617,7 @@ data$con_organizaciones= normalize(data$con_org,
                                    margin=2,
                                    range = c(0, 100))
 data$con_organizaciones=as.numeric(data$con_organizaciones)
+summary(data$con_organizaciones)
 ```
 
 # 3. Hallazgos 
@@ -690,25 +682,23 @@ Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Muje
 ## b. Hipótesis 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 ```{r}
-ml3 <- lm(con_organizaciones ~ interes_pol + democracia + preo_guerra + lib_igualdad + objetivos_encuestado + mundo , data=data)
-summary(ml3)
-```
-
-Se observa que el modelo es válido y explica solo el 3.7%. Sin embargo, no todas sus variables aportan al modelo, es por ello que se creará un nuevo modelo con solo algunas de estas variables
-
-```{r}
-library(fastDummies)
 data=dummy_cols(data,select_columns = c("preo_guerra"))
 data=dummy_cols(data,select_columns = c("lib_igualdad"))
 data=dummy_cols(data,select_columns = c("mundo"))
 data=dummy_cols(data,select_columns = c("interes_pol"))
-levels(data$mundo)
+data=dummy_cols(data,select_columns = c("objetivos_encuestado"))
 
-ml4 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+preo_guerra_Mucho+ lib_igualdad_Libertad+mundo , data=data)
+ml3 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+`mundo_Muy cerca`+ lib_igualdad_Libertad+interes_pol_Mucho+`objetivos_encuestado_Mantener el orden`, data=data)
+
+ml4 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+mundo_Cerca+ lib_igualdad_Libertad+interes_pol_Mucho+`objetivos_encuestado_Participacion en decisiones gubernamentales`, data=data)
+
+library(stargazer)
+stargazer(ml3, ml4, type ="text")
+summary(ml3)
 summary(ml4)
 ```
 
-Con variables que sí aportan al modelo, este explica el 3.5%, lo que demuestra que las variables que afectan directamente la confianza en las organizaciones solo son 5. 
+Se observa que ambos modelos explican la variable dependiente, es decir, la confianza en las instituciones. Sin embargo, el porcentaje de aplicación varía en cada modelo, ya que existen variables más significativas que otras. De esta manera, el primer modelo explica tan solo el 1.1%, mientras que el segundo explica el 2.0%. Como se observó en la revisión de la literatura, el nivel de importancia que una persona le otorgue a la política tendrá repercusiones en su percepción sobre las organizaciones internacionales. De la misma forma, la importancia que el encuestado le brinde a la democracia se reflejará en su confianza en las organizaciones internacionales, ya que ellas están encargadas de velar por su protección. Para ambos modelos la amenaza de guerra ha sido una variable significativa, lo que refleja que los autores decritos en la revisión de la literatura estaban en lo correcto al afirmar la relación estrecha entre la confianza a las organizaciones internacionales y una fuerte preocupación por la amenaza de guerra, ya que la mayoria de estas como la ONU se han construido en relación al mantenmiento de la paz. Finalmente, la mayor importancia a la libertad que a la igualdad refleja que los encuestados asocian en mayor medida la construccion y el funcionamiento de las organizaciones internacionales con la libertad que con la igualdad.
 
 # 4. Conclusiones
 
