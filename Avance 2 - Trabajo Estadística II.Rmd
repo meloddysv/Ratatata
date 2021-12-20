@@ -547,7 +547,14 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 ## 2. Metodología
 
-Después de este análisis descriptivo, se realizará un indicador con la confianza en la ONU, OEA y FMI, de esta forma la variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar la regresión lineal múltiple para poder saber qué variables independientes influyen sobre ella, sean estas numéricas o categóricas. De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
+Para realizar el análisis, se realizará un indicador a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semiprobabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre munchos otros temas. 
+
+De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. 
+
+
+
+
+De esta manera, se encontrarán las mejores variables que explican la relación, se realizarán los respectivos diagramas de dispersión para las pruebas de correlación y se construirá un modelo adecuado. Luego de ello se probará si el modelo cumple con los cinco requisitos para saber si es válido y aplicable en la realidad. El último paso será la interpretación de los resultados. 
 
 ### Creación de la variable Confianza en las Organizaciones Internacionales por Componentes Principales
 Variables a usar:
@@ -716,6 +723,8 @@ Burgos, J. (2019, 12 abril). Las organizaciones internacionales y sus recursos d
 Cabeza De Vergara, L., & Muñoz, A. (2010, 10 enero). Análisis del proceso de toma de decisiones, visión desde la PYME y la Gran Empresa de Barranquilla. Redalyc. Recuperado 29 de octubre de 2021, de https://www.redalyc.org/pdf/4096/409634363002.pdf
 
 Edwards, M. S. (2009). Public support for the international economic organizations: Evidence from developing countries. Review of International Organizations, 4(2), 185- 209.
+
+Encuesta Mundial de Valores (EMV) Perú 2018 .Link :http://repositorio.pucp.edu.pe/index/handle/123456789/133575
 
 FMI. (2018). Informe del FMI 2017. Recuperado 29 de octubre de 2021, de https://www.imf.org/external/pubs/ft/ar/2017/eng/assets/languages/IMF-AR17-Spanish.pdf
 
