@@ -559,7 +559,7 @@ Variables a usar:
 - Confianza en el Fondo Monetario Internacional (FMI)
 - Confianza en la Organización de Estados Americanos (OEA)
 
-**
+**a. Creación de la matriz de correlaciones**
 
 ```{r}
 comp_prin=subset(data,select=c("ONU", "OEA", "FMI"))
@@ -578,26 +578,32 @@ tl.col = "black", # Color de las etiquetas
 bg = "white", # Color de fondo
 title = "", 
 col = NULL)
+
+corMatrix=cor(comp_prin)
 ```
 
-**
+**b. Diagnóstico de la matriz de correlaciones**
 
 ```{r}
-# pruebas
+# Prueba del KMO
 library(psych)
 psych::KMO(comp_prin)
 
-corMatrix=cor(comp_prin)
+# Prueba de esfericidad de Barlet
 cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```
+- Como en la prueba del KKMO el overall MSA es 0.6, mayor a 0.5, y la Prueba de esfericidad de Barlet sale falsa, confirmando que la matriz de correlación no es una matriz identidad, se puede continuar con el análisis.
 
-**
+
+**c. Creación de componentes**
 
 ```{r}
+#Gráfico de sedimentación Componentes Principales
 fa.parallel(corMatrix, fm="pa", fa="pc", main = "Scree Plot")
+
+#Método de eigen values
 library(FactoMineR)
 res.pca <- PCA(comp_prin, graph = FALSE)
-library(FactoMineR)
 library(factoextra)
 fviz_pca_var(res.pca, col.var = "black",repel = TRUE)
 eig.val <-get_eig(res.pca)
@@ -605,7 +611,7 @@ eig.val
 ```
 
 
-**Añadir variable Confianza en las OI a la base de datos**
+**d. Añadir variable Confianza en las OI a la base de datos**
 
 ```{r}
 comp1<- pca(comp_prin,nfactors = 1,rotate = "varimax")
