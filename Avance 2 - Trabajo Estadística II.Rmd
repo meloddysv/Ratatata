@@ -547,9 +547,9 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 
 ## 2. Metodología
 
-Para realizar el análisis, se realizará el indicador confianza en las organizaciones internacionales, a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semiprobabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre munchos otros temas. 
+Para realizar el análisis, se realizará el indicador confianza en las organizaciones internacionales, a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de 18 años de 25 regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semi probabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre muchos otros temas. 
+De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. Para conformarla, se empleará una técnica de reducción de dimensiones, específicamente, el análisis por componentes principales, ya que se busca reducir el número de dimensiones en relación a la varianza total. A partir de ello, se realizan tres modelos de regresión lineal múltiple dado que la variable dependiente es numérica es una escala de 0 a 100. Los dos primeros modelos se realizarán para confirmar o negar las hipótesis planteadas, y el tercero para encontrar el mejor modelo que explique la variabilidad de la confianza en las organizaciones internacionales. 
 
-De esta forma la nueva variable dependiente, confianza en las organizaciones internacionales, será de tipo numérica y se podrá realizar una regresión lineal múltiple para saber qué variables independientes influyen sobre esta. Para conformarla, se empleará una técnica de reducción de dimensiones, específicamente, el análisis por componentes principales, ya que se busca reducir el número de dimensiones en relación a la varianza total. 
 
 ### Creación de la variable Confianza en las Organizaciones Internacionales por Componentes Principales
 
@@ -660,9 +660,9 @@ stargazer(ml1, ml2,
 
 *Análisis:*
 
-Se realizó el primer modelo de regresión tomando en cuenta a las variables, sexo-Hombre, educación pos secundario, idelogía de izquierda, ingresos altos y edad. Si bien el modelo es válido, los p-valores de idelogía de izquierda, sexo hombre e ingresos altos son menores a 0.05, por lo tanto, las variables no aportan en la construcción del modelo. Ello permite negar que la izquierda necesariamente prefiere el multilateralismo, reflejo de las organizaciones internacionales, y que las personas con ingresos altos confien mas en las OI, dado que sus intereses podrían contraponerse a los objetivos de las OIs. Por lo tanto, se procedió a realizar un segundo modelo con otras categorias de las variables elegidas. En este, se toma en cuenta la variable sexo-mujer, educación pos secundaria, ideología de derecha, ingresos medios y edad. En este modelo, todas las variables aportan al modelo, y este explica el 0.027 de la variabilidad de confianza en las organizaciones internacionales,un porcentaje bajo pero mejor que el del primer modelo. 
+Se realizó el primer modelo de regresión tomando en cuenta a las variables, sexo-Hombre, educación pos secundario, idelogía de izquierda, ingresos altos y edad. Si bien el modelo es válido, los p-valores de idelogía de izquierda, sexo hombre e ingresos altos son menores a 0.05, por lo tanto, las variables no aportan en la construcción del modelo. Ello permite negar que la izquierda necesariamente prefiere el multilateralismo, reflejo de las organizaciones internacionales, y que las personas con ingresos altos confien mas en las OI, dado que sus intereses podrían contraponerse a los objetivos de las OIs. Por lo tanto, se procedió a realizar un segundo modelo con otras categorías de las variables elegidas. En este, se toma en cuenta la variable sexo-mujer, educación pos secundaria, ideología de derecha, ingresos medios y edad. En este modelo, todas las variables aportan al modelo, y este explica el 0.027 de la variabilidad de confianza en las organizaciones internacionales,un porcentaje bajo pero mejor que el del primer modelo. 
 
-En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presuncion de que las mujeres, al ser un grupo profundamente afectado por medidas económicas y neoliberales tomadas por las OI, confiarían menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la búsqueda de la igualdad y seguridad. Del mismo modo, ideología de derecha en este modelo sí es significativo, por lo que se podría afirmar que las personas del ala conservadora podrían compartir ciertos valores que las oI defienden, como la no intervención y el respeto a la soberanía de cadd Estado. Por otro lado, ingresos es significativo si se toma en consideración el nivel medios. Finalmente, edad es la única variable con una relación inversa a la confianza (-0.078), lo que confirma la literatura: las personas mayores no confian en las OI, pues estariiían maás cercanos a realizar un balance sobre la capacidad y eficiencia de las OIs en base a experiencias previas, como intervenciones humanitarias o guerras. Por el contrario, a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
+En este modelo, sexo-mujer tiene una relación directa con la confianza en las organizaciones internacionales. Ello se contrapone a la presunción de que las mujeres, al ser un grupo profundamente afectado por medidas económicas y neoliberales tomadas por las OI, confiarían menos en sus decisiones, por lo que las OI parecen seguir representando objetivos e ideales que las mujeres priorizan, como la búsqueda de la igualdad y seguridad. Del mismo modo, la ideología de derecha en este modelo sí es significativa, por lo que se podría afirmar que las personas del ala conservadora podrían compartir ciertos valores que las OI defienden, como la no intervención y el respeto a la soberanía de cada Estado. Por otro lado, los ingresos son significativos si se toma en consideración el nivel medio, lo que también implica un conocimiento sobre su labor. Finalmente, edad es la única variable con una relación inversa a la confianza (-0.078), lo que confirma lo propuesto en la revisión de la literatura: las personas mayores no confían en las OI, pues estarían más cercanos a realizar un balance sobre la capacidad y eficiencia de las OIs en base a experiencias previas, como intervenciones humanitarias o guerras. Por el contrario, a menor edad, mayor confianza y esperanza de que estas instituciones pueden cambiar el mundo. 
 
 
 - Ecuación final:
@@ -671,11 +671,7 @@ Confianza en las organizaciones internacionales = 30.49769  + (2.41933*Sexo_Muje
 ## b. Hipótesis 2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven 
 
 ```{r}
-data=dummy_cols(data,select_columns = c("preo_guerra"))
-data=dummy_cols(data,select_columns = c("lib_igualdad"))
-data=dummy_cols(data,select_columns = c("mundo"))
-data=dummy_cols(data,select_columns = c("interes_pol"))
-data=dummy_cols(data,select_columns = c("objetivos_encuestado"))
+data=dummy_cols(data,select_columns = c("preo_guerra", "lib_igualdad", "mundo", "interes_pol", "objetivos_encuestado"))
 ml3 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+`mundo_Muy cerca`+ lib_igualdad_Libertad+interes_pol_Mucho+`objetivos_encuestado_Mantener el orden`, data=data)
 ml4 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+mundo_Cerca+ lib_igualdad_Libertad+interes_pol_Mucho+`objetivos_encuestado_Participacion en decisiones gubernamentales`, data=data)
 library(stargazer)
@@ -683,18 +679,19 @@ stargazer(ml3, ml4, type ="text")
 summary(ml3)
 summary(ml4)
 ```
+
 Se realizó el tercer modelo de regresión tomando en cuenta a las variables, objetivos_encuestado_mantener el orde, interes_pol_mucho, lib_igualdad_Libertad, democracia, preo_guerra_bastante y democracia. Este modelo es válido y expxlica el 1.8%, por lo que se experimentó realizando diversas combinaciones para lograr un porcentaje de explicación más alto;sin embargo, no se encontró otro modelo con un porcentaje de explicación mayor al del tercer modelo. Y esto se debe a que, como se observó en la revisión de la literatura, el nivel de importancia que una persona le otorgue a la política tendrá repercusiones en su percepción sobre las organizaciones internacionales. De la misma forma, la importancia que el encuestado le brinde a la democracia se reflejará en su confianza en las organizaciones internacionales, ya que ellas están encargadas de velar por su protección. Para ambos modelos la amenaza de guerra ha sido una variable significativa, lo que refleja que los autores decritos en la revisión de la literatura estaban en lo correcto al afirmar la relación estrecha entre la confianza a las organizaciones internacionales y una fuerte preocupación por la amenaza de guerra, ya que la mayoria de estas como la ONU se han construido en relación al mantenmiento de la paz. Finalmente, la mayor importancia a la libertad que a la igualdad refleja que los encuestados asocian en mayor medida la construccion y el funcionamiento de las organizaciones internacionales con la libertad que con la igualdad.
 
 
 MODELO FINAL 
 ```{r}
-
 mf <- lm(con_organizaciones ~ democracia+`mundo_Muy cerca`+ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 summary(mf)
 ```
+
 Modelo: 
 
-conf_organizaciones=23.04630+(0.79682*democracia)+(  5.51303*Mundo_cerca)+(sexo_Mujer*2.59468)+(`educacion_Post-secundario`*4.01992)+(Ideologia_Derecha*3.94390)+(Ingresos_Medio* 3.57365)-(Edad* -0.08409)
+conf_organizaciones= 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992)+(Ideologia_Derecha*3.94390)+(Ingresos_Medio* 3.57365)-(Edad* -0.08409)
 
 ```{r}
 #ejemplo 1
