@@ -686,7 +686,7 @@ summary(mf)
 
 Modelo: 
 
-Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992) + (Ideologia_Derecha*3.94390) + (Ingresos_Medio* 3.57365)-(Edad* -0.08409)
+Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992) + (Ideologia_Derecha*3.94390) + (Ingresos_Medio* 3.57365)+(Edad* -0.08409)
 
 ```{r}
 #ejemplo 1
@@ -702,7 +702,7 @@ Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682
 
 Después de haber realizado la división de las variables usadas en el trabajo en dos grupos y de encontrar cuáles eran las que aportan mayor explicación a la variable dependiente, estas serán fusionadas en el modelo final que explicará la confianza en las organizaciones internacionales. De esta manera, la percepción de estar muy cerca al mundo, ser mujer, poseer una educación post secundaria, ser de derecha y tener ingresos medios serán las variables a usar. 
 
-El modelo final explica el 4%, más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 25 años, poseen una educación post secundaria, no son de derecha y tienen ingresos medios, poseen un nivel de confianza en las instituciones medio-bajo. Lo mismo pasará si los encuestados fueron hombres de 40 años con ideología de derecha, sin ingresos medios y sin educación post secundaria. Por otro lado, las mujeres de 50 años con ideología de derecha, estudios post secundarios, que se siente muy cerca al mundo y defiende la democracia poseerán un nivel medio-alto de confianza en las organizaciones internacionales 
+El modelo final explica el 4%, mucho más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 18 años con ingresos medios, ideología de derecha, educación post secundaria, gran confianza en la democracia y con cercanía al mundo. Lo mismo pasará si los encuestados fueron mujeres de 50 años con ingresos medios, ideología de derecha, educación post-secundaria y gran confianza en la democracia. Asimismo, se observa que el encuestado no tendrá una gran confianza en las organizaciones internacionales si es un hombre de 50 años, que posee ingresos medios , no tiene ideología de derecha, tiene poca confianza en la democracia y no se siente cerca al mundo.  
 
 
 
