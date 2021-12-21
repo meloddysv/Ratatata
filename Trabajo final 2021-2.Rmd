@@ -1,15 +1,19 @@
 ---
-title: "Trabajo final - Estadística para el Análisis Político II"
-author: "Georgia Tito (20190632) y Meloddy Saldarriaga (20190185)"
-date: "10/14/2021"
-output: html_document
+title: "Trabajo Final"
+author: "Georgia Tito y Meloddy Saldarriaga"
+date: "21/12/2021"
+output:  rmdformats::material
 ---
-
-Link repositorio en github: https://github.com/meloddysv/Ratatata.git
+<style>
+body {
+text-align: justify}
+</style>
 
 # 1. Introducción 
 
-Desde finales de la Segunda Guerra Mundial, hubo una creciente proliferación de organizaciones internacionales (OIs) con nuevas capacidades y competencias dedicadas a la cooperación política y económica (Pastor 1986). Gracias al Sistema de Naciones Unidas, se crearon organismos para que los Estados puedan encargarse de velar por una diversidad de temas, especialmente, tras la falla de la Liga de las Naciones al querer velar por la paz y seguridad a nivel mundial. Entre las distintas organizaciones que se crearon destaca la Organización Mundial de la Salud (OMS), como las que estaban vinculadas al Sistema de Bretton Woods: el Banco Mundial, el Fondo Monetario Internacional y el GATT, posteriormente conocido como la Organización Mundial del Comercio. Paralelamente, surgieron organizaciones regionales de integración o vinculación por temas específicos, como la Unión Africana, la Unión Europea y la Organización de Estados Americanos. 
+Link del repositorio en Github: https://github.com/meloddysv/Ratatata.git
+
+Desde finales de la Segunda Guerra Mundial, hubo una creciente proliferación de organizaciones internacionales con nuevas capacidades y competencias dedicadas a la cooperación política y económica (Pastor, 1986). Gracias al Sistema de Naciones Unidas, se crearon organismos para que los Estados puedan encargarse de velar por una diversidad de temas, especialmente, tras la falla de la Liga de las Naciones al querer velar por la paz y seguridad a nivel mundial. Entre las distintas organizaciones que se crearon destaca la Organización Mundial de la Salud (OMS), como las que estaban vinculadas al Sistema de Bretton Woods: el Banco Mundial, el Fondo Monetario Internacional y el GATT, posteriormente conocido como la Organización Mundial del Comercio. Paralelamente, surgieron organizaciones regionales de integración o vinculación por temas específicos, como la Unión Africana, la Unión Europea y la Organización de Estados Americanos. 
 
 Todas estas se encargan de canalizar la cooperación internacional, y se convierten en plataformas mediante las cuales otros Sujetos de Derecho Internacional y actores internacionales pueden adquirir visibilidad, y discutir sobre diversos temas como la protección de los derechos humanos, el medio ambiente, el patrimonio común de la humanidad, etc. Más aún cuando debido a la creciente interdependencia entre países, se observan problemáticas que no son posibles de resolver de manera aislada. En este contexto, el multilateralismo, característica del orden liberal, vislumbraba un camino hacia la gobernanza global. Sin embargo, en los últimos años, se ha observado un fuerte descontento por diversos sectores de la población sobre los efectos de la labor de las organizaciones internacionales. Según Adler y Drieschova (2021), estas solían conformar parte de la autoridad epistémica, es decir, eran instituciones y comunidades en las que se confiaba por producir conocimientos y estándares que representaban la verdad (conocimiento compartido colectivamente). No obstante,  tras la llegada de grupos y gobiernos, como el de Trump y Andrés Manuel López Obrador, que critican a las organizaciones y las comunidades de seguridad pluralistas establecidas, el futuro de las organizaciones es incierto. 
 
@@ -21,26 +25,25 @@ Por otro lado, se observa que la OEA durante el 2017-2020 participó activamente
 
 Además, por su parte, el Fondo Monetario Internacional realizó la “Cuarta Misión de Asistencia Técnica al INEI” en el 2018, esto con el objetivo de analizar los avances por sectores institucionales en cuentas nacionales anuales, sobre todo en cuentas financieras y balances (INEI, 2018). De esta forma, el FMI brindó mayores herramientas, fuentes y métodos para una mejor elaboración de las cuentas trimestrales de los sectores institucionales  (INEI, 2018). Como se aprecia estas organizaciones han tenido gran impacto durante el periodo a estudiar, por lo que deben de haber generado reacciones positivas o negativas en la población peruana. 
 
-Teniendo en consideración que las actividades de la Organización de las Naciones Unidas, el Fondo Monetario Internacional y la Organización de Estados Americanos, han sido constantes en el territorio peruano el presente trabajo tendrá como pregunta de investigación: ¿Qué factores determinan la confianza en las organizaciones internacionales en el Perú durante el periodo 2018-2020?  Por ende, el objetivo principal será definir qué variables impactan en mayor y menor medida la confianza de la población peruana en las organizaciones internacionales, sabiendo que existe un continuo descontento respecto al trabajo que han venido realizando. Dentro de los objetivos específicos, este trabajo desea saber cuanto impactan las variables relacionadas con libertad, sexo, democracia y edad. Así como también con las variables ideología, interés en la política, ingresos socioeconómicos, educación y proximidad al mundo. 
+Teniendo en consideración que las actividades de la Organización de las Naciones Unidas, el Fondo Monetario Internacional y la Organización de Estados Americanos, han sido constantes en el territorio peruano, el presente trabajo tendrá como pregunta de investigación: ¿Qué factores determinan la confianza en las organizaciones internacionales en el Perú durante el periodo 2018-2020?  Por ende, el objetivo principal será definir qué variables impactan en mayor y menor medida la confianza de la población peruana en las organizaciones internacionales, sabiendo que existe un continuo descontento respecto al trabajo que han venido realizando. Dentro de los objetivos específicos, este trabajo desea saber cuanto impactan las variables relacionadas con libertad, sexo, democracia y edad. Así como también con las variables ideología, interés en la política, ingresos socioeconómicos, educación y proximidad al mundo. 
 
-Como se mencionaba, la bibliografía sobre la confianza en las organizaciones internacionales no es extensa, pero la relación que puede tener con las variables propuestas es de sumo interés. Sobre la variable **sexo**, diversos estudios demuestran que las organizaciones internacionales económicas, como el Banco Mundial y el Fondo Monetario Internacional, dictaminan medidas de austeridad y remoldean las economías para que esten orientadas al libre mercado, lo que afecta negativamente a las mujeres (Sparr 1998). Cuando se cortan los servicios sociales como de educación o salud, se confía en que ello será cubierto por madres, hijas, tías, abuelas, haciendo hincapié en la división sexual del trabajo en continentes como África y América Latina, por lo que se intensifica el trabajo doméstico no remunerado en el sector informal (Sparr 1998). Asimismo, en relación a las Naciones Unidas, se cuestiona la responsabilidad de la organizaciones internacionales por la violación de derechos humanos que se llevan a cabo en las intervenciones humanitarias y misiones de paz, como la jerarquía en torno a la distinción entre hombres y mujes en documentos como los Principios Rectores sobre las Empresas y los Derechos Humanos de las Naciones Unidas (Handl y Simons 2019). Por todo ello, se esperaría que las mujeres confíen menos en las organizaciones internacionales económicas que los hombres (Edwards 2009: 190).
+Como se mencionaba, la bibliografía sobre la confianza en las organizaciones internacionales no es extensa, pero la relación que puede tener con las variables propuestas es de sumo interés. Sobre la variable sexo, diversos estudios demuestran que las organizaciones internacionales económicas, como el Banco Mundial y el Fondo Monetario Internacional, dictaminan medidas de austeridad y remoldean las economías para que esten orientadas al libre mercado, lo que afecta negativamente a las mujeres (Sparr, 1998). Cuando se cortan los servicios sociales como de educación o salud, se confía en que ello será cubierto por madres, hijas, tías, abuelas, haciendo hincapié en la división sexual del trabajo en continentes como África y América Latina, por lo que se intensifica el trabajo doméstico no remunerado en el sector informal (Sparr, 1998). Asimismo, en relación a las Naciones Unidas, se cuestiona la responsabilidad de la organizaciones internacionales por la violación de derechos humanos que se llevan a cabo en las intervenciones humanitarias y misiones de paz, como la jerarquía en torno a la distinción entre hombres y mujes en documentos como los Principios Rectores sobre las Empresas y los Derechos Humanos de las Naciones Unidas (Handl y Simons, 2019). Por todo ello, se esperaría que las mujeres confíen menos en las organizaciones internacionales económicas que los hombres (Edwards, 2009: 190).
 
-Por su parte, sobre las variables **nivel educativo** e **ingresos socioeconómicos**, se encontró que el éxito profesional, relacionado con ambas variables, puede aumentar la confianza de otras personas como su nivel de información sobre hechos actuales,  por lo que pueden conocer mejor los esfuerzos de la ONU y otras organizaciones internacionales para darles respaldo (Torgler 2007). En relación a la **ideología**, por ejemplo, en un análisis del caso estadounidense, se encuentra que los republicanos y las élites políticas conservadoras son más pesimistas respecto a la naturaleza de las relaciones internacionales, y corrientes realistas sugieren que la cesión de soberanía en organizaciones internacionales no es favorable para la política interna (Brewer et al., 2004). En esta misma línea, en un artículo sobre el multilateralismo en EE.UU. pos Segunda Guerra Mundial, Rathbun (2011) encontró que la izquierda está más dispuesta que la derecha hacia las soluciones acordadas debido a su naturaleza “más confiada”, lo que podría trasladarse a otras regiones. Asimismo, en torno a la variable **edad**, se concluye que las experiencias que los estadounidenses mayores han tenido durante sus años de formación (conflictos armados) generan una desconfianza generalizada hacia otras naciones, por lo que no creen en la efectividad de las instituciones internacionales (Brewer et al., 2004).
+Por su parte, sobre las variables nivel educativo e ingresos socioeconómicos, se encontró que el éxito profesional, relacionado con ambas variables, puede aumentar la confianza de otras personas como su nivel de información sobre hechos actuales,  por lo que pueden conocer mejor los esfuerzos de la ONU y otras organizaciones internacionales para darles respaldo (Torgler, 2007). En relación a la ideología, por ejemplo, en un análisis del caso estadounidense, se encuentra que los republicanos y las élites políticas conservadoras son más pesimistas respecto a la naturaleza de las relaciones internacionales, y corrientes realistas sugieren que la cesión de soberanía en organizaciones internacionales no es favorable para la política interna (Brewer et al., 2004). En esta misma línea, en un artículo sobre el multilateralismo en EE.UU. pos Segunda Guerra Mundial, Rathbun (2011) encontró que la izquierda está más dispuesta que la derecha hacia las soluciones acordadas debido a su naturaleza “más confiada”, lo que podría trasladarse a otras regiones. Asimismo, en torno a la variable edad, se concluye que las experiencias que los estadounidenses mayores han tenido durante sus años de formación (conflictos armados) generan una desconfianza generalizada hacia otras naciones, por lo que no creen en la efectividad de las instituciones internacionales (Brewer et al., 2004).
 
-Sobre el **interés en la política**, Torgler (2007) encuentra en un estudio sobre la confianza en la ONU que, si las personas que son cínicas y pesimistas sobre la política interna, también tendrían esa misma percepción sobre las organizaciones internacionales, más aún si creen que su gobierno no puede satisfacer sus necesidades y derechos, las OI menos. En esa misma línea, sobre el **interés en la democracia**, hubo años en los que los gobiernos de latinoamérica, especialmente del Perú, distaban mucho de ser calificados como democráticos. Es por ello que, en la actualidad, la democracia no es un tema que pasa de manera desapercibida. Diversos son los organismos que velan por su protección y difusión, entre estos se encuentran las organizaciones internacionales como la ONU y OEA, quienes la tienen como pilar en su actuar. El actuar de estas organizaciones se refleja en las diversas resoluciones, tratados, acuerdos, declaraciones, mecanismos de supervisión, entre otros, que han emitido a lo largo de los últimos 60 años a favor de la promoción de valores democráticos (Nuño, 2020).
+Sobre el interés en la política, Torgler (2007) encuentra en un estudio sobre la confianza en la ONU que, si las personas que son cínicas y pesimistas sobre la política interna, también tendrían esa misma percepción sobre las organizaciones internacionales, más aún si creen que su gobierno no puede satisfacer sus necesidades y derechos, las OI menos. En esa misma línea, sobre el interés en la democracia, hubo años en los que los gobiernos de latinoamérica, especialmente del Perú, distaban mucho de ser calificados como democráticos. Es por ello que, en la actualidad, la democracia no es un tema que pasa de manera desapercibida. Diversos son los organismos que velan por su protección y difusión, entre estos se encuentran las organizaciones internacionales como la ONU y OEA, quienes la tienen como pilar en su actuar. El actuar de estas organizaciones se refleja en las diversas resoluciones, tratados, acuerdos, declaraciones, mecanismos de supervisión, entre otros, que han emitido a lo largo de los últimos 60 años a favor de la promoción de valores democráticos (Nuño, 2020).
 
-En torno a la **amenaza de guerra**, Shannon (2009) analiza la relación entre las organizaciones internacionales y el mantenimiento de la paz, teniendo en consideración que previos estudios han encontrado que países miembros de una misma organización reducen la posibilidad de conflicto, por lo que estas fomentarán la paz entre países, especialmente, las que son más estructuradas. De esta manera, las OI serían valiosas para fomentar la participación internacional activa en los conflictos de los miembros, por lo que los ciudadanos de un país podrían. Por otro lado, la **libertad personal** es fundamental en la vida de las personas, su importancia abarca tal magnitud que el artículo 7 de la Convención Americana habla de ella como uno de los derechos principales en la vida de las personas (Leco y Belman, 2018). Es decir, debe de ser protegida de diversos abusos que se puedan cometer por distintos actores. En este punto las organizaciones internacionales juegan un papel clave, ya que posibilitan, protegen  y fomentan grados de libertad y bienestar individual, derechos y una autodeterminación colectiva (Burgos, 2019). 
+En torno a la amenaza de guerra, Shannon (2009) analiza la relación entre las organizaciones internacionales y el mantenimiento de la paz, teniendo en consideración que previos estudios han encontrado que países miembros de una misma organización reducen la posibilidad de conflicto, por lo que estas fomentarán la paz entre países, especialmente, las que son más estructuradas. De esta manera, las OI serían valiosas para fomentar la participación internacional activa en los conflictos de los miembros, por lo que los ciudadanos de un país podrían. Por otro lado, la libertad personal es fundamental en la vida de las personas, su importancia abarca tal magnitud que el artículo 7 de la Convención Americana habla de ella como uno de los derechos principales en la vida de las personas (Leco y Belman, 2018). Es decir, debe de ser protegida de diversos abusos que se puedan cometer por distintos actores. En este punto las organizaciones internacionales juegan un papel clave, ya que posibilitan, protegen  y fomentan grados de libertad y bienestar individual, derechos y una autodeterminación colectiva (Burgos, 2019). 
 
-Por otra parte, la decisión de brindar o no confianza a las organizaciones internacionales se basa en los sucesos o hechos del entorno de los encuestados, así como también en los **objetivos** que estos se han establecido (Cabeza de Vergara y Muñoz, 2010). Finalmente, día a día vivimos en un mundo cada vez más globalizado e interconectado, este tema no solo afecta a actores de otra naturaleza, sino también a nosotros como individuos. La globalización implica flujos, no solo materiales o económicos, sino también de ideas, conocimiento e información (Flores, 2016). Por ende, la información del actuar y planes de operación de las organizaciones internacionales no es privada o de difícil acceso, al contrario todos pueden acceder a ella mediante internet, porque nos encontramos **más cerca del mundo**. 
+Por otra parte, la decisión de brindar o no confianza a las organizaciones internacionales se basa en los sucesos o hechos del entorno de los encuestados, así como también en los objetivos que estos se han establecido (Cabeza de Vergara y Muñoz, 2010). Finalmente, día a día vivimos en un mundo cada vez más globalizado e interconectado, este tema no solo afecta a actores de otra naturaleza, sino también a nosotros como individuos. La globalización implica flujos, no solo materiales o económicos, sino también de ideas, conocimiento e información (Flores, 2016). Por ende, la información del actuar y planes de operación de las organizaciones internacionales no es privada o de difícil acceso, al contrario todos pueden acceder a ella mediante internet, porque nos encontramos más cerca del mundo. 
 
 Después de la revisión bibliográfica de las variables a usar, las hipótesis de este trabajo son las siguientes: 
 
-1. Es probable que las variables “interés en la política” y “edad” expliquen en mayor medida la confianza en organizaciones internacionales que la variable “sexo”, ya que a mayor edad y mayor interes en la política, estarán más informados sobre los planes de acción de las organizaciones a estudiar 
+1. Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a hombres jóvenes. 
 
-2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven
+2. Luego de la revisión de literatura, las personas ya sea que prefieren libertad, seguridad o igualdad tendrán un alto grado de confianza en las organizaciones internacionales, ya que estos son algunos de los valores que promueven.
 
 3. Es probable que un modelo que posea las variables clásicas y las variables menos comunes explique en mayor medida la confianza en las organizaciones internacionales a comparación de modelos que las traten por separado. 
-
 
 # Preparación de la data
 
@@ -48,6 +51,7 @@ Después de la revisión bibliográfica de las variables a usar, las hipótesis 
 ```{r results='hide',message=FALSE}
 setwd("~/Documents/GitHub/Ratatata")
 library(rio)
+library(prettydoc)
 WVS <-import("WVS_Peru.xlsx")
 ```
 
@@ -65,29 +69,24 @@ library(car)
 # Q82: OEA
 summary(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`)
 table(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`)
-
 data$`Q82_OAS: Confidence: The Organization of American States (OAE)`[data$`Q82_OAS: Confidence: The Organization of American States (OAE)` == "-1"] <- NA
 data$`Q82_OAS: Confidence: The Organization of American States (OAE)`[data$`Q82_OAS: Confidence: The Organization of American States (OAE)` == "-2"] <- NA
 data$OEA <- recode(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`, "1=4; 2=3; 3=2;4=1")
 table(data$OEA)
 summary(data$OEA)
 data$OEA[is.na(data$OEA)] <- mean(data$OEA,na.rm=TRUE)
-
 # Q83: Naciones Unidas
 table(data$`Q83: Confidence: The United Nations (UN)`)
 data$`Q83: Confidence: The United Nations (UN)`[data$`Q83: Confidence: The United Nations (UN)` == "-1"] <- NA
 data$`Q83: Confidence: The United Nations (UN)`[data$`Q83: Confidence: The United Nations (UN)` == "-2"] <- NA
 data$`Q83: Confidence: The United Nations (UN)`[data$`Q83: Confidence: The United Nations (UN)` == "-5"] <- NA
-
 data$ONU <- recode(data$`Q83: Confidence: The United Nations (UN)`, "1=4; 2=3; 3=2;4=1")
 table(data$ONU)
 data$ONU[is.na(data$ONU)] <- mean(data$ONU,na.rm=TRUE)
-
 # Q84: Fondo Monetario Internacional
 table(data$`Q84: Confidence: International Monetary Found (IMF)`)
 data$`Q84: Confidence: International Monetary Found (IMF)`[data$`Q84: Confidence: International Monetary Found (IMF)` == "-1"] <- NA
 data$`Q84: Confidence: International Monetary Found (IMF)`[data$`Q84: Confidence: International Monetary Found (IMF)` == "-2"] <- NA
-
 data$FMI <- recode(data$`Q84: Confidence: International Monetary Found (IMF)`, "1=4; 2=3; 3=2;4=1")
 table(data$FMI)
 data$FMI[is.na(data$FMI)] <- mean(data$FMI,na.rm=TRUE)
@@ -140,7 +139,6 @@ table(data$`Q240: Left-right political scale`)
 data$`Q240: Left-right political scale`[data$`Q240: Left-right political scale` == "-1"] <- NA
 data$`Q240: Left-right political scale`[data$`Q240: Left-right political scale` == "-2"] <- NA
 data$`Q240: Left-right political scale`[is.na(data$`Q240: Left-right political scale`)] <- mean(data$`Q240: Left-right political scale`,na.rm=TRUE)
-
 summary(data$Ideologia)
 data$Ideologia <- recode(data$`Q240: Left-right political scale`, "1:4=1; 5:6.5=2;7:10=3")
 data$Ideologia=as.factor(data$Ideologia)
@@ -208,7 +206,6 @@ table(data$`Q152: Aims of country: first choice`)
 data$`Q152: Aims of country: first choice`  [data$`Q152: Aims of country: first choice` == "-1"] <- 0
 data$`Q152: Aims of country: first choice` [data$`Q152: Aims of country: first choice` == "-2"] <- 0
 data$objetivos_pais=as.factor(data$`Q152: Aims of country: first choice`)
-
 levels(data$objetivos_pais)
 levels(data$objetivos_pais)<-c("No sabe","Crecimiento economico alto","Defensas fuertes","Participacion ciudadana","Embellecer las ciudades")
 summary(data$objetivos_pais)
@@ -216,9 +213,8 @@ summary(data$objetivos_pais)
 
 **- Objetivos del encuestado**
 
-```{r eresults='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q154: Aims of respondent: first choice`)
-
 data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice`== "-1"] <- 0
 data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice` == "-2"] <- 0
 data$objetivos_encuestado=as.factor(data$`Q154: Aims of respondent: first choice`)
@@ -328,7 +324,6 @@ table(data$Ingresos)
 tabla_ingresos=table(data$Ingresos)
 tabla_ingresos1=prop.table(tabla_ingresos)*100
 round(tabla_ingresos1, digits = 2)
-
 barplot(tabla_ingresos1, main = "Gráfico de Barras de Ingreso socioeconómicos",
 xlab = "Nivel de ingresos",
 ylab = "Porcentaje", col = "aquamarine3", border = "darkgreen")
@@ -341,15 +336,12 @@ ylab = "Porcentaje", col = "aquamarine3", border = "darkgreen")
 
 ```{r}
 summary(data$Ideologia)
-
 tabla_ideologia=table(data$Ideologia)
 tabla_ideologia1=prop.table(tabla_ideologia)*100
 round(tabla_ideologia1, digits = 2)
-
 barplot(tabla_ideologia1, main = "Gráfico de Barras de ideología",
 xlab = "Ideología política",
 ylab = "Porcentaje", col = "lightgreen", border = "darkgreen")
-
 ```
 
 - Como se observa, del total de personas, la mayoría (50.17% o 592 personas) se consideran de centro, después el 35% se considera de derecha, y el 14% de izquierda.
@@ -361,7 +353,6 @@ summary(data$interes_pol)
 tabla_interes=table(data$interes_pol)
 tabla_interes1=prop.table(tabla_interes)*100
 round(tabla_interes1, digits = 2)
-
 barplot(tabla_interes1, main = "Gráfico de barras de interés en la política",
 xlab = "Interés en la política",
 ylab = "Porcentaje", col = "darkgoldenrod3", border = "darkgoldenrod")
@@ -375,14 +366,11 @@ Mode(data$preo_guerra, na.rm = T)
 tabla_preo=table(data$preo_guerra)
 tabla_preo1=prop.table(tabla_preo)*100
 round(tabla_preo1, digits = 2)
-
 t3=as.data.frame(table(data$preo_guerra))
-
 ggplot(t3,aes(x="Grado de preocupación por una guerra",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
             position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico de preocupación por una guerra")+xlab("") + ylab(" ")
-
 ```
 - La mayoría de las personas (57.09%) tienen mucha preocupación porque el Perú se involucre en una guerra.
 
@@ -413,7 +401,6 @@ Mode(data$lib_igualdad,na.rm = T)
 ```{r}
 library(ggplot2)
 t1=as.data.frame(table(data$lib_igualdad))
-
 ggplot(t1,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
@@ -450,12 +437,10 @@ Mode(data$objetivos_pais,na.rm = T)
 
 ```{r}
 t3=as.data.frame(table(data$objetivos_pais))
-
 ggplot(t3,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
             position=position_stack(vjust=0.5))+coord_polar(theta="y")+ggtitle("Gráfico pie de la variable sobre los objetivos del país")+xlab("") + ylab(" ")
-
 ```
 
 - Se observa que la mayoría de personas prefiere que el pís se enfoque en un alto crecimiento económico antes de hacer nuestras ciudades un poco más bellas 
@@ -471,7 +456,6 @@ Mode(data$objetivos_encuestado,na.rm = T)
 
 ```{r}
 t4=as.data.frame(table(data$objetivos_encuestado))
-
 ggplot(t4,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
@@ -501,7 +485,6 @@ boxplot(data$democracia)
 ```{r}
 Mode(data$mundo,na.rm = T)
 t5=as.data.frame(table(data$mundo))
-
 ggplot(t5,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
@@ -520,7 +503,6 @@ Mode(data$educacion,na.rm = T)
 
 ```{r}
 t6=as.data.frame(table(data$educacion))
-
 ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
   geom_bar(stat = "identity",color="black")+
   geom_text(aes(label=Freq),
@@ -530,7 +512,7 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
 
-## 3. Metodología
+# 3. Metodología
 
 Para realizar el análisis, se construirá el indicador confianza en las organizaciones internacionales, a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de dieciocho años de veinticinco regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semi probabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre muchos otros temas en las preguntas realizadas. 
 
@@ -570,7 +552,6 @@ ggcorrplot(corMatrix,colors = c("#ff0000", "white", "#0000ff"))
 # Prueba del KMO
 library(psych)
 psych::KMO(comp_prin)
-
 # Prueba de esfericidad de Barlet
 cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```
@@ -583,7 +564,6 @@ cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```{r}
 #Gráfico de sedimentación Componentes Principales
 fa.parallel(corMatrix, fm="pa", fa="pc", main = "Scree Plot")
-
 #Método de eigen values
 library(FactoMineR)
 res.pca <- PCA(comp_prin, graph = FALSE)
@@ -603,7 +583,6 @@ comp<-as.data.frame(comp1$scores)
 summary(comp$PC1)
 data$con_org<- (comp$PC1)
 data$con_org=as.numeric(data$con_org)
-
 library(BBmisc)
 data$con_organizaciones= normalize(data$con_org, 
                                    method = "range", 
@@ -622,9 +601,7 @@ A partir de la variable confianza en las organizaciones internacionales, se real
 ```{r}
 library(fastDummies)
 data=dummy_cols(data,  select_columns = c("sexo","educacion", "Ingresos", "Ideologia"))
-
 ml1 <- lm(con_organizaciones ~ sexo_Hombre + `educacion_Post-secundario` + Ideologia_Izquierda + Ingresos_Alto + Edad, data=data)
-
 ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
 ```
 
@@ -686,15 +663,13 @@ summary(mf)
 
 Modelo: 
 
-Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992) + (Ideologia_Derecha*3.94390) + (Ingresos_Medio* 3.57365)-(Edad* -0.08409)
+Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682*democracia)+ (5.51303*Mundo_cerca) + (sexo_Mujer*2.59468) +(`educacion_Post-secundario`*4.01992) + (Ideologia_Derecha*3.94390) + (Ingresos_Medio* 3.57365)+(Edad* -0.08409)
 
 ```{r}
 #ejemplo 1
 23.04630 + (0.79682*10)+(5.51303*1)+(2.59468*0) + (4.01992*1) + (3.94390*1) + (0* 3.57365) + (40* -0.08409)
-
 #ejemplo 2 
 23.04630 + (0.79682*10) + (5.51303*1) + (2.59468*1) + (4.01992*1) + (3.94390*1) + (1* 3.57365) + (18* -0.08409)
-
 #ejemplo 3
 23.04630 + (0.79682*3) + (5.51303*0) + (2.59468*0) + (4.01992*0) + (3.94390*0) + (1* 3.57365) + (50* -0.08409)
 ```
@@ -702,7 +677,7 @@ Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682
 
 Después de haber realizado la división de las variables usadas en el trabajo en dos grupos y de encontrar cuáles eran las que aportan mayor explicación a la variable dependiente, estas serán fusionadas en el modelo final que explicará la confianza en las organizaciones internacionales. De esta manera, la percepción de estar muy cerca al mundo, ser mujer, poseer una educación post secundaria, ser de derecha y tener ingresos medios serán las variables a usar. 
 
-El modelo final explica el 4%, más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 25 años, poseen una educación post secundaria, no son de derecha y tienen ingresos medios, poseen un nivel de confianza en las instituciones medio-bajo. Lo mismo pasará si los encuestados fueron hombres de 40 años con ideología de derecha, sin ingresos medios y sin educación post secundaria. Por otro lado, las mujeres de 50 años con ideología de derecha, estudios post secundarios, que se siente muy cerca al mundo y defiende la democracia poseerán un nivel medio-alto de confianza en las organizaciones internacionales 
+El modelo final explica el 4%, mucho más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 18 años con ingresos medios, ideología de derecha, educación post secundaria, gran confianza en la democracia y con cercanía al mundo. Lo mismo pasará si los encuestados fueron mujeres de 50 años con ingresos medios, ideología de derecha, educación post-secundaria y gran confianza en la democracia. Asimismo, se observa que el encuestado no tendrá una gran confianza en las organizaciones internacionales si es un hombre de 50 años, que posee ingresos medios , no tiene ideología de derecha, tiene poca confianza en la democracia y no se siente cerca al mundo.  
 
 
 
@@ -719,7 +694,7 @@ Cabe resaltar que, al igual que muchos trabajos de investigación, el presente e
 
 
 
-### 6. Bibliografía:
+# 6. Bibliografía
 
 Brewer, P.R., Gross, K., Aday, S. and Willnat, L. (2004). International Trust and Public Opinion About World Affairs. American Journal of Political Science, 48: 93-109. https://doi-org.ezproxybib.pucp.edu.pe/10.1111/j.0092-5853.2004.00058.x
 
@@ -730,7 +705,7 @@ Cabeza De Vergara, L., & Muñoz, A. (2010, 10 enero). Análisis del proceso de t
 
 Edwards, M. S. (2009). Public support for the international economic organizations: Evidence from developing countries. Review of International Organizations, 4(2), 185- 209.
 
-Encuesta Mundial de Valores (EMV) Perú 2018 .Link :http://repositorio.pucp.edu.pe/index/handle/123456789/133575
+Encuesta Mundial de Valores (EMV) Perú 2018. Link: http://repositorio.pucp.edu.pe/index/handle/123456789/133575
 
 FMI. (2018). Informe del FMI 2017. Recuperado 29 de octubre de 2021, de https://www.imf.org/external/pubs/ft/ar/2017/eng/assets/languages/IMF-AR17-Spanish.pdf
 
@@ -758,16 +733,6 @@ Simons, P., & Handl, M. (2019). Relations of Ruling: A Feminist Critique of the 
 Shannon, M. (2009). Preventing War and Providing the Peace?: International Organizations and the Management of Territorial Disputes. Conflict Management & Peace Science, 26(2), 144–163. https://doi-org.ezproxybib.pucp.edu.pe/10.1177/0738894208101127
 
 Torgler, B. (2008). Trust in international organizations: An empirical investigation focusing on the United Nations. Rev Int Org 3, 65–93. https://doi.org/10.1007/s11558-007-9022-1
-
-
-
-
-
-
-
-
-
-
 
 
 
