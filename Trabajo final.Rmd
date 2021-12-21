@@ -1,5 +1,5 @@
 ---
-title: "Avance 2 - Estadística para el Análisis Político II"
+title: "Trabajo final - Estadística para el Análisis Político II"
 author: "Georgia Tito (20190632) y Meloddy Saldarriaga (20190185)"
 date: "10/14/2021"
 output: html_document
@@ -7,7 +7,7 @@ output: html_document
 
 Link repositorio en github: https://github.com/meloddysv/Ratatata.git
 
-# Introducción 
+# 1. Introducción 
 
 Desde finales de la Segunda Guerra Mundial, hubo una creciente proliferación de organizaciones internacionales (OIs) con nuevas capacidades y competencias dedicadas a la cooperación política y económica (Pastor 1986). Gracias al Sistema de Naciones Unidas, se crearon organismos para que los Estados puedan encargarse de velar por una diversidad de temas, especialmente, tras la falla de la Liga de las Naciones al querer velar por la paz y seguridad a nivel mundial. Entre las distintas organizaciones que se crearon destaca la Organización Mundial de la Salud (OMS), como las que estaban vinculadas al Sistema de Bretton Woods: el Banco Mundial, el Fondo Monetario Internacional y el GATT, posteriormente conocido como la Organización Mundial del Comercio. Paralelamente, surgieron organizaciones regionales de integración o vinculación por temas específicos, como la Unión Africana, la Unión Europea y la Organización de Estados Americanos. 
 
@@ -42,10 +42,10 @@ Después de la revisión bibliográfica de las variables a usar, las hipótesis 
 3. Es probable que un modelo que posea las variables clásicas y las variables menos comunes explique en mayor medida la confianza en las organizaciones internacionales a comparación de modelos que las traten por separado. 
 
 
-# 0. Preparación de la data
+# Preparación de la data
 
 ### Leyendo la base de datos **World Values Survey Association (2017-2020)**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 setwd("~/Documents/GitHub/Ratatata")
 library(rio)
 WVS <-import("WVS_Peru.xlsx")
@@ -60,7 +60,7 @@ data=na.omit(data)
 
 ### Configuración de las variable independiente: Confianza en la OEA, ONU y FMI
 
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 library(car)
 # Q82: OEA
 summary(data$`Q82_OAS: Confidence: The Organization of American States (OAE)`)
@@ -97,7 +97,7 @@ data$FMI[is.na(data$FMI)] <- mean(data$FMI,na.rm=TRUE)
 ### Renombrar las variables independientes y configurarlas
 
 **- Sexo:**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 library(car)
 str(data$`Q260: Sex`)
 data$`Q260: Sex`=as.factor(data$`Q260: Sex`)
@@ -107,14 +107,14 @@ table(data$sexo)
 ```
 
 **- Edad**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 str(data$`Q262: Age`)
 data$Edad <- (data$`Q262: Age`)
 summary(data$Edad)
 ```
 
 **- Ingreso socioeconómico**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q288R: Income level (Recoded)`)
 data$`Q288R: Income level (Recoded)`[data$`Q288R: Income level (Recoded)` == "-1"] <- 0
 data$`Q288R: Income level (Recoded)`[data$`Q288R: Income level (Recoded)` == "-2"] <- 0
@@ -125,7 +125,7 @@ table(data$Ingresos)
 ```
 
 **- Nivel de educación**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q275R: Highest educational level: Respondent`)
 str(data$`Q275R: Highest educational level: Respondent`)
 data$educacion=as.ordered(data$`Q275R: Highest educational level: Respondent`)
@@ -135,7 +135,7 @@ summary(data$educacion)
 ```
 
 **- Ideología:**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q240: Left-right political scale`)
 data$`Q240: Left-right political scale`[data$`Q240: Left-right political scale` == "-1"] <- NA
 data$`Q240: Left-right political scale`[data$`Q240: Left-right political scale` == "-2"] <- NA
@@ -149,7 +149,7 @@ table(data$Ideologia)
 ```
 
 **- Interés en la política:**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 summary(data$`Q199: Interest in politics`)
 data$`Q199: Interest in politics`[data$`Q199: Interest in politics` == "-1"] <- 3
 data$interes_pol <- recode(data$`Q199: Interest in politics`, "1=4; 2=3; 3=2;4=1")
@@ -159,7 +159,7 @@ table(data$interes_pol)
 ```
 
 **- Preocupación por una guerra**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 summary(data$`Q146: Worries: A war involving my country`)
 table(data$`Q146: Worries: A war involving my country`)
 data$`Q146: Worries: A war involving my country`[data$`Q146: Worries: A war involving my country` == "-1"] <- 1
@@ -171,7 +171,7 @@ table(data$preo_guerra)
 ```
 
 **- Libertad de elección y control**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 summary(data$`Q48: How much freedom of choice and control`)
 data$`Q48: How much freedom of choice and control`[data$`Q48: How much freedom of choice and control` == "-2"] <- NA
 data$`Q48: How much freedom of choice and control`[data$`Q48: How much freedom of choice and control` == "-1"] <- NA
@@ -181,7 +181,7 @@ summary(data$lib_con)
 ```
 
 **- Libertad o igualdad**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q149: Freedom and Equality`)
 data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-1"] <- 0
 data$`Q149: Freedom and Equality`[data$`Q149: Freedom and Equality` == "-2"] <- 0
@@ -192,7 +192,7 @@ summary(data$lib_igualdad)
 ```
 
 **- Libertad o seguridad**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q150: Freedom and security - Which more important`)
 data$`Q150: Freedom and security - Which more important` [data$`Q150: Freedom and security - Which more important` == "-1"] <- 0
 data$`Q150: Freedom and security - Which more important`[data$`Q150: Freedom and security - Which more important` == "-2"] <- 0
@@ -203,7 +203,7 @@ summary(data$lib_seguridad)
 ```
 
 **- Objetivos del país**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q152: Aims of country: first choice`)
 data$`Q152: Aims of country: first choice`  [data$`Q152: Aims of country: first choice` == "-1"] <- 0
 data$`Q152: Aims of country: first choice` [data$`Q152: Aims of country: first choice` == "-2"] <- 0
@@ -216,7 +216,7 @@ summary(data$objetivos_pais)
 
 **- Objetivos del encuestado**
 
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r eresults='hide',message=FALSE}
 table(data$`Q154: Aims of respondent: first choice`)
 
 data$`Q154: Aims of respondent: first choice`[data$`Q154: Aims of respondent: first choice`== "-1"] <- 0
@@ -228,7 +228,7 @@ summary(data$objetivos_encuestado)
 ```
 
 **- Importancia de la democracia**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q250: Importance of democracy`)
 str(data$`Q250: Importance of democracy`)
 data$`Q250: Importance of democracy`[data$`Q250: Importance of democracy` == "-2"] <- NA
@@ -239,7 +239,7 @@ summary(data$democracia)
 ```
 
 **- Proximidad al mundo**
-```{r echo=FALSE, results='hide',message=FALSE}
+```{r results='hide',message=FALSE}
 table(data$`Q259: Feel close to the world`)
 data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-2"] <- 0
 data$`Q259: Feel close to the world`[data$`Q259: Feel close to the world` == "-1"] <- 0
@@ -250,7 +250,7 @@ summary(data$mundo)
 ```
 
 
-# 1. Análisis descriptivo
+# 2. Análisis descriptivo
 
 ## a. Variables dependientes 
 
@@ -294,7 +294,10 @@ library(DescTools)
 library(ggplot2)
 table(data$sexo)
 Mode(data$sexo, na.rm = T)
+```
 
+
+```{r message=FALSE}
 t0=as.data.frame(table(data$sexo))
 #install.packages("lessR")
 library(lessR)
@@ -527,7 +530,7 @@ ggplot(t6,aes(x="identity",y=Freq, fill=Var1))+
 - Se observa que la mayor cantidad de personas alcanzó el nivel secundario.
 
 
-## 2. Metodología
+## 3. Metodología
 
 Para realizar el análisis, se construirá el indicador confianza en las organizaciones internacionales, a partir de la confianza en la ONU, OEA y FMI, que se recogieron en la Encuesta Mundial de Valores 2018 en el Perú. Esta fue realizada por el Instituto de Opinión Pública de la Pontificia Universidad Católica del Perú, en la que se entrevistaron a 1400 personas mayores de dieciocho años de veinticinco regiones del país. El muestreo fue aleatorio simple, y el sistema de muestreo fue semi probabilístico polietápico, mediante el método de encuesta PAPI (Paper and Pencil Interview) o cara a cara en papel. En este sentido, se recogió los valores de la población y su impacto en temas como la seguridad, inmigraciones, crecimiento económicos, ciencia y tecnología, entre muchos otros temas en las preguntas realizadas. 
 
@@ -544,13 +547,16 @@ Variables a usar:
 
 **a. Creación de la matriz de correlaciones**
 
-```{r}
+```{r results='hide',message=FALSE}
 comp_prin=subset(data,select=c("ONU", "OEA", "FMI"))
 library(polycor)
 library(psych)
 library(corrplot)
 cor(comp_prin)
+```
 
+
+```{r}
 corMatrix=cor(comp_prin)
 library(ggcorrplot)
 ggcorrplot(corMatrix,colors = c("#ff0000", "white", "#0000ff"))
@@ -569,7 +575,7 @@ psych::KMO(comp_prin)
 cortest.bartlett(corMatrix,n=nrow(comp_prin))$p.value>0.05
 ```
 
-- Como en la prueba del KKMO el overall MSA es 0.6, mayor a 0.5, y la Prueba de esfericidad de Barlet sale falsa, confirmando que la matriz de correlación no es una matriz identidad, se puede continuar con el análisis.
+- Como en la prueba del KMO el overall MSA es 0.6, mayor a 0.5, y la Prueba de esfericidad de Barlet sale falsa, confirmando que la matriz de correlación no es una matriz identidad, se puede continuar con el análisis.
 
 
 **c. Creación de componentes**
@@ -591,7 +597,7 @@ eig.val
 
 **d. Añadir variable Confianza en las Organizaciones Internacionales a la base de datos**
 
-```{r}
+```{r results='hide',message=FALSE}
 comp1<- pca(comp_prin,nfactors = 1,rotate = "varimax")
 comp<-as.data.frame(comp1$scores)
 summary(comp$PC1)
@@ -609,7 +615,7 @@ summary(data$con_organizaciones)
 
 A partir de la variable confianza en las organizaciones internacionales, se realizan tres modelos de regresión lineal múltiple dado que la variable dependiente es numérica es una escala de 0 a 100. Los dos primeros modelos se realizarán para confirmar o negar las hipótesis planteadas, y el tercero para encontrar el mejor modelo que explique la variabilidad de la confianza en las organizaciones internacionales en el Perú. 
 
-# 3. Hallazgos 
+# 4. Hallazgos 
 
 ## a. Hipótesis 1: Considerando la revisión de la literatura, es probable que las variables clásicas, sexo, educación, ingresos, ideología y edad, permitan explicar la confianza en las organizaciones internacionales. Una mayor confianza en las OI probablemente se relacionen a niveles altos de educación, ingresos altos, una ideología de izquierda y a hombres jóvenes. 
 
@@ -623,8 +629,12 @@ ml2 <- lm(con_organizaciones ~ sexo_Mujer + `educacion_Post-secundario` + Ideolo
 ```
 
 
-```{r results='asis'}
+```{r results='hide',message=FALSE}
 library(stargazer)
+```
+
+
+```{r results='asis'}
 stargazer(ml1, ml2, 
           type= "html", 
           title = "Modelos de regresión lineal múltiple de las variables clásicas",    
@@ -658,9 +668,7 @@ ml4 <- lm(con_organizaciones ~ democracia+preo_guerra_Bastante+mundo_Cerca+ lib_
 stargazer(ml3, ml4, type= "html", 
           title = "Modelos de regresión lineal múltiple de variables no comunes",    
           dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
-          covariate.labels = c("Democracia", "Bastante preocupación por una guerra", "Muy cercano al mundo", "Preferencia 
-                               por la libertad", "Mucho interés en la política", "Objetivo de mantener el orden", "Objetivo 
-                               de participar en decisiones gubernamentales", "Constante"),
+          covariate.labels = c("Democracia", "Bastante preocupación por una guerra", "Muy cercano al mundo", "Preferencia por la libertad", "Mucho interés en la política", "Objetivo de mantener el orden", "Objetivode participar en decisiones gubernamentales", "Constante"),
           omit.stat = c("rsq", "f"),
           digits = 3,
           align=TRUE)
@@ -698,7 +706,7 @@ El modelo final explica el 4%, más que los modelos anteriores, y ayuda a descub
 
 
 
-# 4. Conclusiones
+# 5. Conclusiones
 
 A partir del análisis realizado, se concluye que si existen variables que pueden determinar la confianza en las organizaciones internacionales en el Perú. En un inicio, este trabajo consideró doce variables de la base de datos de la Encuesta de Valores 2018. Sin embargo, mientras se realizaron las pruebas estadísticas ya descritas, se encontró que no todas tenían el mismo nivel de significancia para explicar a la variable dependiente. 
 Por un lado, en relación a la primera hipótesis, se determinó que no todas las variables clásicas aportan al modelo. De hecho, variables como ideología de izquierda, ingresos altos y sexo hombre no tenían p-valores significativos, contrario a los análisis realizados previamente, mientras que educación postsecundaria y edad sí aportaron al modelo original. Al realizarse un segundo modelo, se encontró que el conjunto de variables que influyen en la confianza en las organizaciones internacionales en el Perú estaban relacionadas a las mujeres jóvenes con educación postsecundaria, ingresos medios, y de ideología de derecha.
@@ -711,7 +719,7 @@ Cabe resaltar que, al igual que muchos trabajos de investigación, el presente e
 
 
 
-### Bibliografía:
+### 6. Bibliografía:
 
 Brewer, P.R., Gross, K., Aday, S. and Willnat, L. (2004). International Trust and Public Opinion About World Affairs. American Journal of Political Science, 48: 93-109. https://doi-org.ezproxybib.pucp.edu.pe/10.1111/j.0092-5853.2004.00058.x
 
