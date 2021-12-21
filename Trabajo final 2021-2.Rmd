@@ -658,7 +658,16 @@ Se realizó el tercer modelo de regresión tomando en cuenta a las variables, ob
 
 ```{r}
 mf <- lm(con_organizaciones ~ democracia+`mundo_Muy cerca`+ sexo_Mujer + `educacion_Post-secundario` + Ideologia_Derecha + Ingresos_Medio + Edad, data=data)
-summary(mf)
+```
+
+```{r results='asis'}
+stargazer(mf, type= "html", 
+          title = "Modelos de regresión lineal múltiple con variables clásicas y no comunes",    
+          dep.var.labels   = "Confianza en las Organizaciones Internacionales", 
+          covariate.labels = c("Democracia", "Muy cercano al mundo", "Mujer", "Educación post-secundario", "Ideología derecha", "Ingresos Medios", "Edad", "Constante"),
+          omit.stat = c("rsq", "f"),
+          digits = 3,
+          align=TRUE)
 ```
 
 Modelo: 
@@ -678,7 +687,6 @@ Confianza en las organizaciones internacionales en el Perú = 23.04630+ (0.79682
 Después de haber realizado la división de las variables usadas en el trabajo en dos grupos y de encontrar cuáles eran las que aportan mayor explicación a la variable dependiente, estas serán fusionadas en el modelo final que explicará la confianza en las organizaciones internacionales. De esta manera, la percepción de estar muy cerca al mundo, ser mujer, poseer una educación post secundaria, ser de derecha y tener ingresos medios serán las variables a usar. 
 
 El modelo final explica el 4%, mucho más que los modelos anteriores, y ayuda a descubrir que las personas que le brindan una gran importancia a la democracia, son mujeres de 18 años con ingresos medios, ideología de derecha, educación post secundaria, gran confianza en la democracia y con cercanía al mundo. Lo mismo pasará si los encuestados fueron mujeres de 50 años con ingresos medios, ideología de derecha, educación post-secundaria y gran confianza en la democracia. Asimismo, se observa que el encuestado no tendrá una gran confianza en las organizaciones internacionales si es un hombre de 50 años, que posee ingresos medios , no tiene ideología de derecha, tiene poca confianza en la democracia y no se siente cerca al mundo.  
-
 
 
 # 5. Conclusiones
